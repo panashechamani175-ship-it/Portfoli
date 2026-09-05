@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="author" content="Panashe Chamani">
+    <meta name="creator" content="Panashe Chamani">
+    <meta name="publisher" content="Cyberspace">
+    <meta name="application-name" content="Cyberspace Portfolio">
+    <meta name="description" content="Official portfolio of Panashe Chamani, known online as Cyberspace — Zimbabwean full-stack developer, web designer, digital creator and technology enthusiast building modern websites, web applications and digital solutions.">
+    <meta name="keywords" content="Panashe Chamani, Cyberspace, Cyberspace HackerX, Zimbabwe developer, Harare web developer, full stack developer, web designer, software developer, digital creator, African technology, JavaScript developer, Node.js developer, Python developer, React developer, web development Zimbabwe, Panashe Chamani portfolio">
+    <meta name="subject" content="Official portfolio and professional identity of Panashe Chamani (Cyberspace)">
+    <meta name="classification" content="Technology, Web Development, Software Development, Digital Innovation">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="ZW">
+    <meta name="geo.placename" content="Zimbabwe">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Panashe Chamani | Cyberspace — Full Stack Developer">
+    <meta property="og:description" content="Meet Panashe Chamani, known as Cyberspace — a Zimbabwean full-stack developer and digital creator building modern web experiences and technology solutions.">
+    <meta property="og:site_name" content="Cyberspace | Panashe Chamani">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panashe Chamani | Cyberspace — Full Stack Developer">
+    <meta name="twitter:description" content="Official professional portfolio of Panashe Chamani, known as Cyberspace.">
+    <link rel="canonical" href="/">
+    <title>Panashe Chamani (Cyberspace) | Full Stack Developer & Digital Creator</title>
+
+    <!-- Structured data helps search engines and AI systems understand this professional identity. -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Person",
+      "name":"Panashe Chamani",
+      "alternateName":["Cyberspace","Cyberspace HackerX"],
+      "description":"Zimbabwean full-stack developer, web designer, digital creator and technology enthusiast focused on modern websites, web applications and digital innovation.",
+      "jobTitle":"Full Stack Developer",
+      "url":"/",
+      "address":{"@type":"PostalAddress","addressCountry":"ZW"},
+      "knowsAbout":["Web Development","Full Stack Development","JavaScript","React","Node.js","Python","APIs","SEO","Digital Innovation"],
+      "sameAs":[]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --bg-alt: #f8fafc;
+            --bg-dark: #0f172a;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            
+            /* Purple & Blue Theme */
+            --primary: #6366f1;
+            --secondary: #3b82f6;
+            --accent: #8b5cf6;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            
+           
+            --tag-blue: #dbeafe;
+            --tag-purple: #e0e7ff;
+            --tag-green: #d1fae5;
+            --tag-orange: #ffedd5;
+            
+            --font-main: 'Segoe UI', system-ui, sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        /* --- 2. GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-main); background: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 100px 0; }
+        .text-center { text-align: center; }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* --- 4. HEADER & WORKING MENU --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        .btn-nav {
+            padding: 10px 25px;
+            background: var(--gradient);
+            color: white !important;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .bar { width: 25px; height: 3px; background-color: var(--text-main); transition: var(--transition); }
+
+        /* --- 5. HERO SECTION WITH FULL NAME --- */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            display: flex;            align-items: center;
+            gap: 60px;
+            min-height: 100vh;
+        }
+        
+        .hero-content { flex: 1; }
+        
+        .greeting {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--tag-purple);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+        
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-title {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 550px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+        
+        .btn-primary {            padding: 15px 35px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3); }
+        
+        .btn-secondary {
+            padding: 15px 35px;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn-secondary:hover { background: var(--tag-purple); }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .profile-wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+            border: 5px solid white;
+            animation: morph 8s ease-in-out infinite;
+        }
+        
+        .floating-badge {
+            position: absolute;            background: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .badge-1 { top: 20px; right: 0; background: var(--tag-green); color: #059669; }
+        .badge-2 { bottom: 40px; left: -20px; background: var(--tag-blue); color: #2563eb; animation-delay: 1.5s; }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* --- 6. ABOUT & EDUCATION SECTION --- */
+        .about { background: var(--bg-alt); }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .about-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .about-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+                .about-card p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; }
+        
+        .education-box {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-box::before {
+            content: "🎓";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+        }
+        
+        .education-box h4 { font-size: 1.3rem; margin-bottom: 10px; }
+        .education-box .school-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+        .education-box p { opacity: 0.9; font-size: 0.95rem; }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            padding: 8px 16px;
+            background: var(--tag-purple);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2); }
+
+        /* --- 7. CONTRIBUTIONS & SKILLS GRID --- */
+        .contributions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;        }
+
+        .contrib-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            border: 2px solid #e2e8f0;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contrib-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .contrib-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+        
+        .contrib-card:hover::before { transform: scaleX(1); }
+
+        .contrib-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .icon-hostify { background: var(--tag-blue); }
+        .icon-worldtech { background: var(--tag-purple); }
+        .icon-blacknode { background: #1e293b; color: white; }
+        .icon-hackerrank { background: var(--tag-green); }
+
+        .contrib-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-main); }
+        .contrib-card .role {             display: inline-block;
+            padding: 4px 12px;
+            background: var(--tag-orange);
+            color: #ea580c;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .contrib-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+        
+        .contrib-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .contrib-tag {
+            padding: 5px 12px;
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* --- 8. SERVICES SECTION --- */
+        .services { background: var(--bg-alt); }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.15);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .price { font-size: 3rem; font-weight: 800; color: var(--primary); margin: 20px 0; }
+        .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        .pricing-card ul { margin: 30px 0; }
+        .pricing-card li { 
+            padding: 10px 0; 
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pricing-card li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
+
+        /* --- 9. FOOTER --- */
+        footer { background: var(--bg-dark); color: white; padding: 80px 0 30px 0; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        .footer-col h4 { font-size: 1.3rem; margin-bottom: 25px; color: white; }
+        .footer-col p { color: #94a3b8; line-height: 1.8; margin-bottom: 20px; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #94a3b8; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
+        .footer-col ul li a:hover { color: var(--secondary); padding-left: 5px; }
+        
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        .social-icon:hover { background: var(--primary); transform: translateY(-3px); }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* --- 10. ANIMATIONS --- */
+        .hidden { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+        .show { opacity: 1; transform: translateY(0); }
+        
+        .shadow-sm { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .shadow-lg { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        /* --- 11. MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; z-index: 1001; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 75%;
+                background: white;
+                flex-direction: column;
+                justify-content: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: 0.4s ease;
+            }
+            .nav-links.active { right: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+            
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-buttons { justify-content: center; }
+            .profile-wrapper { width: 300px; height: 300px; margin: 0 auto; }
+            .floating-badge { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .pricing-card.featured { transform: scale(1); }
+        }    </style>
+</head>
+<body>
+
+ 
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">CYBERSPACE</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contributions">Contributions</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact" class="btn-nav">Hire Me</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+  
+    <section class="container hero">
+        <div class="hero-content hidden">
+            <span class="greeting">👋 Welcome to my portfolio</span>
+            <h1>Hi, I'm <span>Panashe Chamani</span></h1>
+            <p class="hero-title">Cyberspace • Full Stack Developer • Digital Creator</p>
+            <p class="hero-description">
+                I am <strong>Panashe Chamani</strong>, known online as <strong>Cyberspace</strong>. I build modern websites, digital platforms and scalable web experiences with a focus on creativity, functionality and real-world impact. My work combines full-stack development, UI/UX thinking, SEO and emerging technology.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">
+                    <span>🚀</span> View My Work
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <span>📧</span> Contact Me
+                </a>
+            </div>
+        </div>
+        <div class="hero-image hidden">
+            <div class="profile-wrapper">
+                <img src="hostfy.png" alt="hostfy.png" class="profile-pic">
+                <div class="floating-badge badge-1">
+                    <span>💼</span> Available for Work                </div>
+                <div class="floating-badge badge-2">
+                    <span>⭐</span> 5+ Years Experience
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="text-center hidden">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know my journey and background</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card hidden">
+                    <h3><span>👨‍</span> Who I Am</h3>
+                    <p>
+                        I'm <strong>Panashe Chamani, professionally known as CYBERSPACE</strong>, a passionate Full Stack Developer and digital creator dedicated to creating 
+                        beautiful, functional, and user-centered digital experiences. With expertise in modern 
+                        web technologies, I help businesses establish their online presence with clean, 
+                        efficient, and scalable solutions.
+                    </p>
+                    <p>
+                        My approach combines technical excellence with creative problem-solving. Whether it's 
+                        building a $100 website for a local restaurant or developing complex web applications, 
+                        I bring the same level of dedication and professionalism to every project.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                
+                <div class="about-card hidden">
+                    <h3><span>🎓</span> My Education</h3>
+                    <p>
+                        I believe in continuous learning and practical experience. My technical foundation 
+                        was built through intensive hands-on training and real-world projects.
+                    </p>
+                    
+                    <div class="education-box">
+                        <h4>Certified Web Developer</h4>
+                        <div class="school-name">IYF FREE WEEKEND ACADEMY</div>                        <p>
+                            Intensive weekend program covering modern web development, 
+                            including HTML5, CSS3, JavaScript, React, Node.js, and database management. 
+                            Graduated with honors and completed multiple real-world projects.
+                        </p>
+                        <div class="skill-tags" style="margin-top: 15px;">
+                            <span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">2024 - 2025</span>
+                            <span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">Full Stack</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 25px; padding: 20px; background: var(--bg-alt); border-radius: 10px;">
+                        <h4 style="margin-bottom: 10px; color: var(--primary);">📚 Continuous Learning</h4>
+                        <ul style="color: var(--text-muted);">
+                            <li>✓ HackerRank Problem Solving</li>
+                            <li>✓ Open Source Contributions</li>
+                            <li>✓ Tech Community Participation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="identity" class="section">
+        <div class="container">
+            <div class="text-center hidden">
+                <h2 class="section-title">My Digital Identity</h2>
+                <p class="section-subtitle">Panashe Chamani • Cyberspace • Builder of digital experiences from Zimbabwe to the world</p>
+            </div>
+            <div class="contributions-grid">
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-worldtech">🧠</div>
+                    <span class="role">Identity</span>
+                    <h3>Panashe Chamani</h3>
+                    <p>My professional name and personal identity behind the Cyberspace brand. I am focused on technology, creativity, continuous learning and building useful digital products.</p>
+                </div>
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-blacknode">🌐</div>
+                    <span class="role">Digital Brand</span>
+                    <h3>Cyberspace</h3>
+                    <p>Cyberspace represents my online professional identity: a space for software development, web innovation, digital creativity, technology experiments and future-focused ideas.</p>
+                </div>
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-hostify">🚀</div>
+                    <span class="role">Mission</span>
+                    <h3>Building for Impact</h3>
+                    <p>I aim to create accessible, professional and scalable technology solutions that help individuals, brands and businesses establish a stronger digital presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contributions" class="section">
+        <div class="container">
+            <div class="text-center hidden">
+                <h2 class="section-title">Skills & Contributions</h2>
+                <p class="section-subtitle">Organizations I've worked with and platforms where I excel</p>
+            </div>
+
+            <div class="contributions-grid">
+                
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-hostify">🚀</div>
+                    <span class="role">Web Developer</span>
+                    <h3>Hostify ZW</h3>
+                    <p>Developed and maintained web hosting client dashboards. Improved user experience and implemented new features for customer management systems.</p>
+                    <div class="contrib-tags">
+                        <span class="contrib-tag">React</span>
+                        <span class="contrib-tag">Node.js</span>
+                        <span class="contrib-tag">MongoDB</span>
+                        <span class="contrib-tag">REST API</span>
+                    </div>
+                </div>
+
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-worldtech">🌍</div>                    <span class="role">Tech Contributor</span>
+                    <h3>World of Tech</h3>
+                    <p>Created educational content and interactive tutorials. Mentored beginners in web development and organized tech workshops.</p>
+                    <div class="contrib-tags">
+                        <span class="contrib-tag">Teaching</span>
+                        <span class="contrib-tag">Content</span>
+                        <span class="contrib-tag">Mentorship</span>
+                        <span class="contrib-tag">Community</span>
+                    </div>
+                </div>
+
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-blacknode">⚛️</div>
+                    <span class="role">Backend Developer</span>
+                    <h3>Black Dark Node</h3>
+                    <p>Built scalable backend services and APIs. Focused on server architecture, database optimization, and security implementations.</p>
+                    <div class="contrib-tags">
+                        <span class="contrib-tag">Node.js</span>
+                        <span class="contrib-tag">Express</span>
+                        <span class="contrib-tag">PostgreSQL</span>
+                        <span class="contrib-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="contrib-card hidden">
+                    <div class="contrib-icon icon-hackerrank">💻</div>
+                    <span class="role">Problem Solver</span>
+                    <h3>HackerRank</h3>
+                    <p>Active competitive programmer with 500+ problems solved. Ranked in top 10% for JavaScript and Problem Solving domains.</p>
+                    <div class="contrib-tags">
+                        <span class="contrib-tag">Algorithms</span>
+                        <span class="contrib-tag">Data Structures</span>
+                        <span class="contrib-tag">JavaScript</span>
+                        <span class="contrib-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="text-center hidden">
+                <h2 class="section-title">Services & Pricing</h2>
+                <p class="section-subtitle">Affordable, professional web solutions for your business</p>
+            </div>
+            <div class="pricing-grid">
+              
+                <div class="pricing-card hidden">
+                    <h3>🍕 Restaurant Starter</h3>
+                    <div class="price">$100<span> one-time</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Perfect for cafes, food trucks, and small restaurants</p>
+                    <ul>
+                        <li>Mobile-Friendly Design</li>
+                        <li>Digital Menu Display</li>
+                        <li>Google Maps Integration</li>
+                        <li>Contact Form</li>
+                        <li>Social Media Links</li>
+                        <li>1 Week Delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured hidden">
+                    <span class="featured-badge">MOST POPULAR</span>
+                    <h3>💼 Business Pro</h3>
+                    <div class="price">$350<span> one-time</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">For established businesses needing strong online presence</p>
+                    <ul>
+                        <li>5 Custom Pages</li>
+                        <li>SEO Optimization</li>
+                        <li>Contact & Booking Forms</li>
+                        <li>Social Media Integration</li>
+                        <li>Google Analytics Setup</li>
+                        <li>1 Month Support</li>
+                        <li>2 Weeks Delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
+                </div>
+
+                <div class="pricing-card hidden">
+                    <h3>🛒 E-Commerce</h3>
+                    <div class="price">$800<span> starting</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Full online store to sell your products</p>
+                    <ul>
+                        <li>Complete Online Store</li>
+                        <li>Payment Gateway Setup</li>
+                        <li>Product Management (20+ items)</li>
+                        <li>Shopping Cart & Checkout</li>
+                        <li>Admin Dashboard</li>
+                        <li>Inventory Management</li>
+                        <li>1 Month Support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Cyberspace </h4>
+                    <p>Full Stack Developer passionate about creating impactful digital solutions. Let's build something amazing together.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">📧 </a>
+                        <a href="#" class="social-icon">📷 </a>
+                        <a href="#" class="social-icon"> 📱 </a>
+                        <a href="#" class="social-icon">📘 </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">→ About Me</a></li>
+                        <li><a href="#skills">→ My Skills</a></li>
+                        <li><a href="#contributions">→ Contributions</a></li>
+                        <li><a href="#services">→ Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="mailto:iyf@gmail.com">📧 support@hostify.co.zw</a></li>
+                        <li><a href="tel:+263787770395">📱 +263787770395</a></li>
+                        <li><a href="#">📍 Harare, Zimbabwe</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Education</h4>
+                    <ul>
+                        <li><a href="#">🎓 IYF FREE WEEKEND ACADEMY</a></li>
+                        <li><a href="#">💻 HackerRank Certified</a></li>
+                        <li><a href="#">📚 Continuous Learner</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">                <p>&copy; 2026 Cyberspace . All rights reserved. | Built with ❤️ and lots of ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html><!--  -->
