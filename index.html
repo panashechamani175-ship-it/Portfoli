@@ -1,51 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#6366f1">
-    <meta name="author" content="Panashe Chamani">
-    <meta name="creator" content="Panashe Chamani">
-    <meta name="publisher" content="Cyberspace">
-    <meta name="application-name" content="Cyberspace Portfolio">
-    <meta name="description" content="Official portfolio of Panashe Chamani, known online as Cyberspace — Zimbabwean full-stack developer, web designer, digital creator and technology enthusiast building modern websites, web applications and digital solutions.">
-    <meta name="keywords" content="Panashe Chamani, Cyberspace, Cyberspace HackerX, Zimbabwe developer, Harare web developer, full stack developer, web designer, software developer, digital creator, African technology, JavaScript developer, Node.js developer, Python developer, React developer, web development Zimbabwe, Panashe Chamani portfolio">
-    <meta name="subject" content="Official portfolio and professional identity of Panashe Chamani (Cyberspace)">
-    <meta name="classification" content="Technology, Web Development, Software Development, Digital Innovation">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="geo.region" content="ZW">
-    <meta name="geo.placename" content="Zimbabwe">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Panashe Chamani | Cyberspace — Full Stack Developer">
-    <meta property="og:description" content="Meet Panashe Chamani, known as Cyberspace — a Zimbabwean full-stack developer and digital creator building modern web experiences and technology solutions.">
-    <meta property="og:site_name" content="Cyberspace | Panashe Chamani">
-    <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Panashe Chamani | Cyberspace — Full Stack Developer">
-    <meta name="twitter:description" content="Official professional portfolio of Panashe Chamani, known as Cyberspace.">
-    <link rel="canonical" href="/">
-    <title>Panashe Chamani (Cyberspace) | Full Stack Developer & Digital Creator</title>
-
-    <!-- Structured data helps search engines and AI systems understand this professional identity. -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"Person",
-      "name":"Panashe Chamani",
-      "alternateName":["Cyberspace","Cyberspace HackerX"],
-      "description":"Zimbabwean full-stack developer, web designer, digital creator and technology enthusiast focused on modern websites, web applications and digital innovation.",
-      "jobTitle":"Full Stack Developer",
-      "url":"/",
-      "address":{"@type":"PostalAddress","addressCountry":"ZW"},
-      "knowsAbout":["Web Development","Full Stack Development","JavaScript","React","Node.js","Python","APIs","SEO","Digital Innovation"],
-      "sameAs":[]
-    }
-    </script>
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panashe Chamani | Cyberspace — Full Stack Developer &amp; Digital Creator</title>
+<style>
         :root {
             --bg-color: #ffffff;
             --bg-alt: #f8fafc;
@@ -527,326 +487,469 @@
             .floating-badge { display: none; }
             .about-grid { grid-template-columns: 1fr; }
             .pricing-card.featured { transform: scale(1); }
-        }    </style>
+        }    
+/* --- PROFESSIONAL BIOGRAPHY SECTION --- */
+.biography-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.bio-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bio-photo {
+    position: relative;
+}
+
+.bio-photo img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(30, 41, 59, 0.2);
+}
+
+.bio-name-card {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(12px);
+    color: white;
+}
+
+.bio-name-card strong {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.bio-name-card span {
+    display: block;
+    color: #a5b4fc;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.bio-label {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+}
+
+.bio-content h3 {
+    font-size: 2.5rem;
+    margin: 12px 0 25px;
+}
+
+.bio-content h3 span {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bio-content p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    line-height: 1.85;
+}
+
+.bio-quote {
+    margin-top: 30px;
+    padding: 25px;
+    border-left: 5px solid var(--primary);
+    background: white;
+    border-radius: 0 15px 15px 0;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 30px rgba(99,102,241,.08);
+}
+
+.bio-quote span {
+    color: var(--primary);
+    font-size: 2rem;
+    line-height: 0;
+}
+
+.bio-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.bio-stats div {
+    flex: 1;
+    min-width: 120px;
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+.bio-stats strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.bio-stats span {
+    display: block;
+    font-size: .8rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .bio-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bio-photo img {
+        height: 480px;
+    }
+
+    .bio-content h3 {
+        font-size: 2rem;
+    }
+}
+</style>
+
+<meta content="Official portfolio of Panashe Chamani, professionally known as Cyberspace — a Full Stack Developer and Digital Creator focused on websites, web applications, digital platforms and technology innovation." name="description"/>
+<meta content="Panashe Chamani, Cyberspace, Panashe Chamani Cyberspace, Full Stack Developer, Web Developer, Digital Creator, Technology Innovator, Zimbabwe Developer, African Developer, JavaScript, Node.js, Python, APIs, Web Applications, Digital Platforms, ChamaniStream Global, Top Taekwondo, Pixel Zim Tech" name="keywords"/>
+<meta content="Panashe Chamani" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="Panashe Chamani | Cyberspace" property="og:title"/>
+<meta content="Official portfolio of Panashe Chamani, professionally known as Cyberspace." property="og:description"/>
+<meta content="panashe-chamani-cyberspace.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Panashe Chamani",
+ "alternateName":"Cyberspace",
+ "jobTitle":"Full Stack Developer and Digital Creator",
+ "description":"Panashe Chamani, professionally known as Cyberspace, is a technology-focused developer and digital creator interested in websites, web applications, APIs and digital platforms.",
+ "image":"panashe-chamani-cyberspace.png",
+ "knowsAbout":["Web Development","JavaScript","HTML","CSS","Node.js","Python","APIs","Digital Platforms","Technology Innovation"]
+}
+</script>
 </head>
 <body>
-
- 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">CYBERSPACE</a>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contributions">Contributions</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact" class="btn-nav">Hire Me</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-  
-    <section class="container hero">
-        <div class="hero-content hidden">
-            <span class="greeting">👋 Welcome to my portfolio</span>
-            <h1>Hi, I'm <span>Panashe Chamani</span></h1>
-            <p class="hero-title">Cyberspace • Full Stack Developer • Digital Creator</p>
-            <p class="hero-description">
-                I am <strong>Panashe Chamani</strong>, known online as <strong>Cyberspace</strong>. I build modern websites, digital platforms and scalable web experiences with a focus on creativity, functionality and real-world impact. My work combines full-stack development, UI/UX thinking, SEO and emerging technology.
-            </p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn-primary">
-                    <span>🚀</span> View My Work
+<header>
+<div class="container">
+<nav>
+<a class="logo" href="#">CYBERSPACE</a>
+<ul class="nav-links">
+<li><a href="#biography">Biography</a></li><li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contributions">Contributions</a></li>
+<li><a href="#services">Services</a></li>
+<li><a class="btn-nav" href="#contact">Hire Me</a></li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</div>
+</header>
+<section class="container hero">
+<div class="hero-content hidden">
+<span class="greeting">👋 Welcome to my official portfolio</span>
+<h1>Hi, I'm <span>Panashe Chamani</span></h1>
+<p class="hero-title">Professionally known as Cyberspace · Full Stack Developer &amp; Digital Creator</p>
+<p class="hero-description">I build modern websites, web applications and digital experiences. Driven by curiosity and technology, I turn ideas into practical digital projects while continuously learning and exploring innovation.</p>
+<div class="hero-buttons">
+<a class="btn-primary" href="#services">
+<span>🚀</span> View My Work
                 </a>
-                <a href="#contact" class="btn-secondary">
-                    <span>📧</span> Contact Me
+<a class="btn-secondary" href="#contact">
+<span>📧</span> Contact Me
                 </a>
-            </div>
-        </div>
-        <div class="hero-image hidden">
-            <div class="profile-wrapper">
-                <img src="hostfy.png" alt="hostfy.png" class="profile-pic">
-                <div class="floating-badge badge-1">
-                    <span>💼</span> Available for Work                </div>
-                <div class="floating-badge badge-2">
-                    <span>⭐</span> 5+ Years Experience
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="text-center hidden">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know my journey and background</p>
-            </div>
-            
-            <div class="about-grid">
-                <div class="about-card hidden">
-                    <h3><span>👨‍</span> Who I Am</h3>
-                    <p>
-                        I'm <strong>Panashe Chamani, professionally known as CYBERSPACE</strong>, a passionate Full Stack Developer and digital creator dedicated to creating 
-                        beautiful, functional, and user-centered digital experiences. With expertise in modern 
-                        web technologies, I help businesses establish their online presence with clean, 
-                        efficient, and scalable solutions.
-                    </p>
-                    <p>
-                        My approach combines technical excellence with creative problem-solving. Whether it's 
-                        building a $100 website for a local restaurant or developing complex web applications, 
-                        I bring the same level of dedication and professionalism to every project.
-                    </p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Git</span>
-                    </div>
-                </div>
-                
-                <div class="about-card hidden">
-                    <h3><span>🎓</span> My Education</h3>
-                    <p>
+</div>
+</div>
+<div class="hero-image hidden">
+<div class="profile-wrapper">
+<img alt="Panashe Chamani, professionally known as Cyberspace" class="profile-pic" src="panashe-chamani-cyberspace.png" style="object-position:center;"/>
+<div class="floating-badge badge-1">
+<span>💼</span> Available for Work                </div>
+<div class="floating-badge badge-2">💻 Digital Creator</div>
+</div>
+</div>
+</section>
+<section class="section about" id="about">
+<div class="container">
+<div class="text-center hidden">
+<h2 class="section-title">About Me</h2>
+<p class="section-subtitle">Get to know my journey, identity and vision in technology</p>
+</div>
+<div class="about-grid">
+<div class="about-card hidden">
+<h3><span>👨‍</span> Who I Am</h3>
+<p>I'm <strong>Panashe Chamani</strong>, professionally known as <strong>Cyberspace</strong>, a technology-focused Full Stack Developer and Digital Creator passionate about building modern, functional and user-centered digital experiences.</p>
+<p>My approach combines creativity, continuous learning and practical problem-solving. I am interested in web development, APIs, digital platforms and emerging technologies that can transform ideas into useful solutions.</p>
+<div class="skill-tags">
+<span class="skill-tag">JavaScript</span>
+<span class="skill-tag">React</span>
+<span class="skill-tag">Node.js</span>
+<span class="skill-tag">Python</span>
+<span class="skill-tag">MongoDB</span>
+<span class="skill-tag">Git</span>
+</div>
+</div>
+<div class="about-card hidden">
+<h3><span>🎓</span> My Education</h3>
+<p>
                         I believe in continuous learning and practical experience. My technical foundation 
                         was built through intensive hands-on training and real-world projects.
                     </p>
-                    
-                    <div class="education-box">
-                        <h4>Certified Web Developer</h4>
-                        <div class="school-name">IYF FREE WEEKEND ACADEMY</div>                        <p>
+<div class="education-box">
+<h4>Certified Web Developer</h4>
+<div class="school-name">IYF FREE WEEKEND ACADEMY</div> <p>
                             Intensive weekend program covering modern web development, 
                             including HTML5, CSS3, JavaScript, React, Node.js, and database management. 
                             Graduated with honors and completed multiple real-world projects.
                         </p>
-                        <div class="skill-tags" style="margin-top: 15px;">
-                            <span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">2024 - 2025</span>
-                            <span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">Full Stack</span>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 25px; padding: 20px; background: var(--bg-alt); border-radius: 10px;">
-                        <h4 style="margin-bottom: 10px; color: var(--primary);">📚 Continuous Learning</h4>
-                        <ul style="color: var(--text-muted);">
-                            <li>✓ HackerRank Problem Solving</li>
-                            <li>✓ Open Source Contributions</li>
-                            <li>✓ Tech Community Participation</li>
-                        </ul>
-                    </div>
+<div class="skill-tags" style="margin-top: 15px;">
+<span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">2024 - 2025</span>
+<span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">Full Stack</span>
+</div>
+</div>
+<div style="margin-top: 25px; padding: 20px; background: var(--bg-alt); border-radius: 10px;">
+<h4 style="margin-bottom: 10px; color: var(--primary);">📚 Continuous Learning</h4>
+<ul style="color: var(--text-muted);">
+<li>✓ HackerRank Problem Solving</li>
+<li>✓ Open Source Contributions</li>
+<li>✓ Tech Community Participation</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section biography-section" id="biography">
+<div class="container">
+<div class="text-center hidden">
+<h2 class="section-title">My Biography</h2>
+<p class="section-subtitle">The story behind Panashe Chamani and the Cyberspace identity</p>
+</div>
+<div class="bio-layout">
+<div class="bio-photo hidden">
+<img alt="Panashe Chamani, professionally known as Cyberspace" src="panashe-chamani-cyberspace.png"/>
+<div class="bio-name-card">
+<strong>Panashe Chamani</strong>
+<span>CYBERSPACE</span>
+</div>
+</div>
+<div class="bio-content hidden">
+<span class="bio-label">DIGITAL JOURNEY</span>
+<h3>Panashe Chamani <span>× Cyberspace</span></h3>
+<p>
+<strong>Panashe Chamani</strong>, professionally known as <strong>Cyberspace</strong>,
+                    is a technology-focused Full Stack Developer and Digital Creator with a passion for
+                    exploring the possibilities of the modern internet.
+                </p>
+<p>
+                    His journey in technology is driven by curiosity, creativity and continuous learning.
+                    Through web development and digital projects, Panashe explores how technology can turn
+                    ideas into practical experiences for people, businesses and communities.
+                </p>
+<p>
+                    Under the <strong>Cyberspace</strong> identity, he focuses on building and experimenting
+                    with websites, web applications, APIs and digital platforms. His work reflects an interest
+                    in modern design, software development and the growing global digital ecosystem.
+                </p>
+<p>
+                    His technology journey includes projects and digital initiatives such as
+                    <strong>ChamaniStream Global</strong>, <strong>Top Taekwondo</strong> and
+                    <strong>Pixel Zim Tech</strong>. These projects represent an ongoing journey of
+                    experimentation, learning and building.
+                </p>
+<div class="bio-quote">
+<span>“</span>
+                    My goal is simple: keep learning, keep building and use technology to create meaningful digital experiences.
                 </div>
-            </div>
-        </div>
-    </section>
+<div class="bio-stats">
+<div><strong>01</strong><span>Digital Identity</span></div>
+<div><strong>∞</strong><span>Learning Mindset</span></div>
+<div><strong>🌍</strong><span>Global Vision</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    
-    <section id="identity" class="section">
-        <div class="container">
-            <div class="text-center hidden">
-                <h2 class="section-title">My Digital Identity</h2>
-                <p class="section-subtitle">Panashe Chamani • Cyberspace • Builder of digital experiences from Zimbabwe to the world</p>
-            </div>
-            <div class="contributions-grid">
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-worldtech">🧠</div>
-                    <span class="role">Identity</span>
-                    <h3>Panashe Chamani</h3>
-                    <p>My professional name and personal identity behind the Cyberspace brand. I am focused on technology, creativity, continuous learning and building useful digital products.</p>
-                </div>
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-blacknode">🌐</div>
-                    <span class="role">Digital Brand</span>
-                    <h3>Cyberspace</h3>
-                    <p>Cyberspace represents my online professional identity: a space for software development, web innovation, digital creativity, technology experiments and future-focused ideas.</p>
-                </div>
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-hostify">🚀</div>
-                    <span class="role">Mission</span>
-                    <h3>Building for Impact</h3>
-                    <p>I aim to create accessible, professional and scalable technology solutions that help individuals, brands and businesses establish a stronger digital presence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contributions" class="section">
-        <div class="container">
-            <div class="text-center hidden">
-                <h2 class="section-title">Skills & Contributions</h2>
-                <p class="section-subtitle">Organizations I've worked with and platforms where I excel</p>
-            </div>
-
-            <div class="contributions-grid">
-                
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-hostify">🚀</div>
-                    <span class="role">Web Developer</span>
-                    <h3>Hostify ZW</h3>
-                    <p>Developed and maintained web hosting client dashboards. Improved user experience and implemented new features for customer management systems.</p>
-                    <div class="contrib-tags">
-                        <span class="contrib-tag">React</span>
-                        <span class="contrib-tag">Node.js</span>
-                        <span class="contrib-tag">MongoDB</span>
-                        <span class="contrib-tag">REST API</span>
-                    </div>
-                </div>
-
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-worldtech">🌍</div>                    <span class="role">Tech Contributor</span>
-                    <h3>World of Tech</h3>
-                    <p>Created educational content and interactive tutorials. Mentored beginners in web development and organized tech workshops.</p>
-                    <div class="contrib-tags">
-                        <span class="contrib-tag">Teaching</span>
-                        <span class="contrib-tag">Content</span>
-                        <span class="contrib-tag">Mentorship</span>
-                        <span class="contrib-tag">Community</span>
-                    </div>
-                </div>
-
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-blacknode">⚛️</div>
-                    <span class="role">Backend Developer</span>
-                    <h3>Black Dark Node</h3>
-                    <p>Built scalable backend services and APIs. Focused on server architecture, database optimization, and security implementations.</p>
-                    <div class="contrib-tags">
-                        <span class="contrib-tag">Node.js</span>
-                        <span class="contrib-tag">Express</span>
-                        <span class="contrib-tag">PostgreSQL</span>
-                        <span class="contrib-tag">Docker</span>
-                    </div>
-                </div>
-
-                <div class="contrib-card hidden">
-                    <div class="contrib-icon icon-hackerrank">💻</div>
-                    <span class="role">Problem Solver</span>
-                    <h3>HackerRank</h3>
-                    <p>Active competitive programmer with 500+ problems solved. Ranked in top 10% for JavaScript and Problem Solving domains.</p>
-                    <div class="contrib-tags">
-                        <span class="contrib-tag">Algorithms</span>
-                        <span class="contrib-tag">Data Structures</span>
-                        <span class="contrib-tag">JavaScript</span>
-                        <span class="contrib-tag">Python</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section services">
-        <div class="container">
-            <div class="text-center hidden">
-                <h2 class="section-title">Services & Pricing</h2>
-                <p class="section-subtitle">Affordable, professional web solutions for your business</p>
-            </div>
-            <div class="pricing-grid">
-              
-                <div class="pricing-card hidden">
-                    <h3>🍕 Restaurant Starter</h3>
-                    <div class="price">$100<span> one-time</span></div>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Perfect for cafes, food trucks, and small restaurants</p>
-                    <ul>
-                        <li>Mobile-Friendly Design</li>
-                        <li>Digital Menu Display</li>
-                        <li>Google Maps Integration</li>
-                        <li>Contact Form</li>
-                        <li>Social Media Links</li>
-                        <li>1 Week Delivery</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
-                </div>
-
-                <div class="pricing-card featured hidden">
-                    <span class="featured-badge">MOST POPULAR</span>
-                    <h3>💼 Business Pro</h3>
-                    <div class="price">$350<span> one-time</span></div>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">For established businesses needing strong online presence</p>
-                    <ul>
-                        <li>5 Custom Pages</li>
-                        <li>SEO Optimization</li>
-                        <li>Contact & Booking Forms</li>
-                        <li>Social Media Integration</li>
-                        <li>Google Analytics Setup</li>
-                        <li>1 Month Support</li>
-                        <li>2 Weeks Delivery</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
-                </div>
-
-                <div class="pricing-card hidden">
-                    <h3>🛒 E-Commerce</h3>
-                    <div class="price">$800<span> starting</span></div>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Full online store to sell your products</p>
-                    <ul>
-                        <li>Complete Online Store</li>
-                        <li>Payment Gateway Setup</li>
-                        <li>Product Management (20+ items)</li>
-                        <li>Shopping Cart & Checkout</li>
-                        <li>Admin Dashboard</li>
-                        <li>Inventory Management</li>
-                        <li>1 Month Support</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Cyberspace </h4>
-                    <p>Full Stack Developer passionate about creating impactful digital solutions. Let's build something amazing together.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon">📧 </a>
-                        <a href="#" class="social-icon">📷 </a>
-                        <a href="#" class="social-icon"> 📱 </a>
-                        <a href="#" class="social-icon">📘 </a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">→ About Me</a></li>
-                        <li><a href="#skills">→ My Skills</a></li>
-                        <li><a href="#contributions">→ Contributions</a></li>
-                        <li><a href="#services">→ Services</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li><a href="mailto:iyf@gmail.com">📧 support@hostify.co.zw</a></li>
-                        <li><a href="tel:+263787770395">📱 +263787770395</a></li>
-                        <li><a href="#">📍 Harare, Zimbabwe</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Education</h4>
-                    <ul>
-                        <li><a href="#">🎓 IYF FREE WEEKEND ACADEMY</a></li>
-                        <li><a href="#">💻 HackerRank Certified</a></li>
-                        <li><a href="#">📚 Continuous Learner</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">                <p>&copy; 2026 Cyberspace . All rights reserved. | Built with ❤️ and lots of ☕</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
+<section class="section" id="contributions">
+<div class="container">
+<div class="text-center hidden">
+<h2 class="section-title">Skills &amp; Contributions</h2>
+<p class="section-subtitle">Projects, technologies and areas that form part of my digital journey</p>
+</div>
+<div class="contributions-grid">
+<div class="contrib-card hidden">
+<div class="contrib-icon icon-hostify">🚀</div>
+<span class="role">Web Developer</span>
+<h3>Hostify ZW</h3>
+<p>Developed and maintained web hosting client dashboards. Improved user experience and implemented new features for customer management systems.</p>
+<div class="contrib-tags">
+<span class="contrib-tag">React</span>
+<span class="contrib-tag">Node.js</span>
+<span class="contrib-tag">MongoDB</span>
+<span class="contrib-tag">REST API</span>
+</div>
+</div>
+<div class="contrib-card hidden">
+<div class="contrib-icon icon-worldtech">🌍</div> <span class="role">Tech Contributor</span>
+<h3>World of Tech</h3>
+<p>Created educational content and interactive tutorials. Mentored beginners in web development and organized tech workshops.</p>
+<div class="contrib-tags">
+<span class="contrib-tag">Teaching</span>
+<span class="contrib-tag">Content</span>
+<span class="contrib-tag">Mentorship</span>
+<span class="contrib-tag">Community</span>
+</div>
+</div>
+<div class="contrib-card hidden">
+<div class="contrib-icon icon-blacknode">⚛️</div>
+<span class="role">Backend Developer</span>
+<h3>Black Dark Node</h3>
+<p>Built scalable backend services and APIs. Focused on server architecture, database optimization, and security implementations.</p>
+<div class="contrib-tags">
+<span class="contrib-tag">Node.js</span>
+<span class="contrib-tag">Express</span>
+<span class="contrib-tag">PostgreSQL</span>
+<span class="contrib-tag">Docker</span>
+</div>
+</div>
+<div class="contrib-card hidden">
+<div class="contrib-icon icon-hackerrank">💻</div>
+<span class="role">Problem Solver</span>
+<h3>HackerRank</h3>
+<p>Active competitive programmer with 500+ problems solved. Ranked in top 10% for JavaScript and Problem Solving domains.</p>
+<div class="contrib-tags">
+<span class="contrib-tag">Algorithms</span>
+<span class="contrib-tag">Data Structures</span>
+<span class="contrib-tag">JavaScript</span>
+<span class="contrib-tag">Python</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section services" id="services">
+<div class="container">
+<div class="text-center hidden">
+<h2 class="section-title">Services &amp; Pricing</h2>
+<p class="section-subtitle">Affordable, professional web solutions for your business</p>
+</div>
+<div class="pricing-grid">
+<div class="pricing-card hidden">
+<h3>🍕 Restaurant Starter</h3>
+<div class="price">$100<span> one-time</span></div>
+<p style="color: var(--text-muted); margin-bottom: 20px;">Perfect for cafes, food trucks, and small restaurants</p>
+<ul>
+<li>Mobile-Friendly Design</li>
+<li>Digital Menu Display</li>
+<li>Google Maps Integration</li>
+<li>Contact Form</li>
+<li>Social Media Links</li>
+<li>1 Week Delivery</li>
+</ul>
+<a class="btn-primary" href="#contact" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
+</div>
+<div class="pricing-card featured hidden">
+<span class="featured-badge">MOST POPULAR</span>
+<h3>💼 Business Pro</h3>
+<div class="price">$350<span> one-time</span></div>
+<p style="color: var(--text-muted); margin-bottom: 20px;">For established businesses needing strong online presence</p>
+<ul>
+<li>5 Custom Pages</li>
+<li>SEO Optimization</li>
+<li>Contact &amp; Booking Forms</li>
+<li>Social Media Integration</li>
+<li>Google Analytics Setup</li>
+<li>1 Month Support</li>
+<li>2 Weeks Delivery</li>
+</ul>
+<a class="btn-primary" href="#contact" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
+</div>
+<div class="pricing-card hidden">
+<h3>🛒 E-Commerce</h3>
+<div class="price">$800<span> starting</span></div>
+<p style="color: var(--text-muted); margin-bottom: 20px;">Full online store to sell your products</p>
+<ul>
+<li>Complete Online Store</li>
+<li>Payment Gateway Setup</li>
+<li>Product Management (20+ items)</li>
+<li>Shopping Cart &amp; Checkout</li>
+<li>Admin Dashboard</li>
+<li>Inventory Management</li>
+<li>1 Month Support</li>
+</ul>
+<a class="btn-primary" href="#contact" style="width: 100%; text-align: center; justify-content: center;">Get Started</a> </div>
+</div>
+</div>
+</section>
+<footer id="contact">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>Panashe Chamani · Cyberspace</h4>
+<p>Official portfolio of Panashe Chamani, professionally known as Cyberspace — a digital creator focused on learning, building and exploring technology.</p>
+<div class="social-links">
+<a class="social-icon" href="#">📧 </a>
+<a class="social-icon" href="#">📷 </a>
+<a class="social-icon" href="#"> 📱 </a>
+<a class="social-icon" href="#">📘 </a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#about">→ About Me</a></li>
+<li><a href="#skills">→ My Skills</a></li>
+<li><a href="#contributions">→ Contributions</a></li>
+<li><a href="#services">→ Services</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact Info</h4>
+<ul>
+<li><a href="mailto:iyf@gmail.com">📧 support@hostify.co.zw</a></li>
+<li><a href="tel:+263787770395">📱 +263787770395</a></li>
+<li><a href="#">📍 Harare, Zimbabwe</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Education</h4>
+<ul>
+<li><a href="#">🎓 IYF FREE WEEKEND ACADEMY</a></li>
+<li><a href="#">💻 HackerRank Certified</a></li>
+<li><a href="#">📚 Continuous Learner</a></li>
+</ul>
+</div>
+</div>
+<div class="copyright"> <p>© 2026 Cyberspace . All rights reserved. | Built with ❤️ and lots of ☕</p>
+</div>
+</div>
+</footer>
+<script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -884,4 +987,4 @@
         });
     </script>
 </body>
-</html><!--  -->
+</html><!-- -->
