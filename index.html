@@ -1,17 +1,37 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ZIMCRAFT | Panashe Chamani — Full-Stack Developer & Digital Creator</title><meta name="description" content="ZIMCRAFT is the personal digital portfolio of Panashe Chamani — a developer and digital creator building modern websites, web applications and digital experiences.">
-<meta name="keywords" content="ZIMCRAFT, Panashe Chamani, Cyberspace, web developer, full stack developer, Zimbabwe developer, JavaScript, React, Node.js, Python, MongoDB, web development">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZIMCRAFT | Panashe Chamani — Full-Stack Developer & Digital Creator</title>
+
+<meta
+  name="description"
+  content="ZIMCRAFT is the personal digital portfolio of Panashe Chamani — a developer and digital creator building modern websites, web applications and digital experiences."
+>
+
+<meta
+  name="keywords"
+  content="ZIMCRAFT, Panashe Chamani, Cyberspace, web developer, full stack developer, Zimbabwe developer, JavaScript, React, Node.js, Python, MongoDB, web development"
+>
+
 <meta name="author" content="Panashe Chamani">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#070b14"><meta property="og:type" content="website">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="ZIMCRAFT | Panashe Chamani">
 <meta property="og:description" content="Turning ideas into digital experiences.">
-<meta property="og:image" content="panashe-profile.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="panashe-profile.png">
+
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ZIMCRAFT | Panashe Chamani">
 <meta name="twitter:description" content="Developer • Digital Creator • Builder">
-<meta name="twitter:image" content="panashe-profile.png"><style>
+<meta name="twitter:image" content="panashe-profile.png">
+
+<style>
+
 :root{
   --bg:#070b14;
   --bg2:#0b1120;
@@ -30,7 +50,11 @@
   --max:1180px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 html{
   scroll-behavior:smooth;
@@ -280,6 +304,20 @@ header{
 
 .btn:hover{
   transform:translateY(-3px);
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp-btn{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:white;
+  border-color:rgba(37,211,102,.35);
+  box-shadow:0 12px 30px rgba(37,211,102,.16);
+}
+
+.whatsapp-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 35px rgba(37,211,102,.25);
 }
 
 .hero-meta{
@@ -890,819 +928,1078 @@ footer{
     padding:32px 24px;
   }
 }
-</style></head><body><header>
-  <div class="container nav"><a class="brand" href="#home" aria-label="ZIMCRAFT home">
-  <span class="brand-mark">Z</span>
-  <span class="brand-name">ZIM<span>CRAFT</span></span>
-</a>
+/* =====================================
+   BUTTON MOVING AROUND THE WEBPAGE
+===================================== */
 
-<button
-  class="menu"
-  id="menu"
-  aria-label="Open menu"
-  aria-expanded="false"
+.channel-btn {
+  position: fixed;
+  z-index: 9999;
+
+  top: 20%;
+  left: 10%;
+
+  animation: moveAroundPage 12s ease-in-out infinite;
+
+  will-change: top, left, transform;
+
+  background: linear-gradient(
+    135deg,
+    #25D366,
+    #128C7E
+  );
+
+  color: white;
+  border: none;
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 35px rgba(37, 211, 102, 0.35);
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =====================================
+   TRAVEL AROUND THE SCREEN
+===================================== */
+
+@keyframes moveAroundPage {
+
+  /* Start - top left */
+  0% {
+    top: 15%;
+    left: 8%;
+    transform: rotate(0deg);
+  }
+
+  /* Move to top right */
+  20% {
+    top: 12%;
+    left: 75%;
+    transform: rotate(3deg);
+  }
+
+  /* Move down right */
+  40% {
+    top: 55%;
+    left: 82%;
+    transform: rotate(-3deg);
+  }
+
+  /* Move bottom center */
+  60% {
+    top: 80%;
+    left: 50%;
+    transform: rotate(2deg);
+  }
+
+  /* Move bottom left */
+  80% {
+    top: 70%;
+    left: 10%;
+    transform: rotate(-2deg);
+  }
+
+  /* Return to start */
+  100% {
+    top: 15%;
+    left: 8%;
+    transform: rotate(0deg);
+  }
+}
+
+
+/* =====================================
+   HOVER
+===================================== */
+
+.channel-btn:hover {
+  animation-play-state: paused;
+
+  transform: scale(1.1);
+
+  box-shadow:
+    0 15px 45px rgba(37, 211, 102, 0.55);
+}
+
+
+/* =====================================
+   MOVING SHINE
+===================================== */
+
+.channel-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: shine 3s infinite;
+}
+
+
+@keyframes shine {
+
+  0% {
+    left: -120%;
+  }
+
+  50%,
+  100% {
+    left: 140%;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="container nav">
+
+    <a class="brand" href="#home" aria-label="ZIMCRAFT home">
+
+      <span class="brand-mark">Z</span>
+
+      <span class="brand-name">
+        ZIM<span>CRAFT</span>
+      </span>
+
+    </a>
+
+    <button
+      class="menu"
+      id="menu"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li><a href="#about">About</a></li>
+
+      <li><a href="#skills">Skills</a></li>
+
+      <li><a href="#projects">Projects</a></li>
+
+      <li><a href="#journey">Journey</a></li>
+
+      <li><a href="#services">Services</a></li>
+
+      <li>
+        <a class="nav-cta" href="#contact">
+          Let's Talk
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+<main id="home">
+
+<!-- HERO -->
+
+<section class="container hero">
+
+  <div class="reveal">
+
+    <span class="status">
+
+      <span class="dot"></span>
+
+      Building, learning & exploring technology
+
+    </span>
+
+    <h1>
+      Panashe<br>
+      <span>Chamani.</span>
+    </h1>
+
+    <p class="hero-role">
+      <strong>Full-Stack Developer</strong>
+      · Digital Creator · Builder
+    </p>
+
+    <p class="hero-copy">
+      I build modern websites, web applications and digital experiences.
+      ZIMCRAFT is my digital space for turning ideas into practical projects,
+      learning through code and exploring what technology can create.
+    </p>
+
+    <div class="actions">
+
+      <a class="btn btn-primary" href="#projects">
+        🚀 Explore My Work
+      </a>
+
+      <a class="btn btn-secondary" href="#contact">
+        💬 Let's Connect
+      </a>
+
+    </div>
+
+    <div class="hero-meta">
+
+      <span>
+        Based in <b>Zimbabwe</b>
+      </span>
+
+      <span>
+        Focus <b>Web & Digital</b>
+      </span>
+
+      <span>
+        Identity <b>Cyberspace</b>
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="profile-shell reveal">
+
+    <div class="profile-glow"></div>
+
+    <div class="profile-card">
+
+      <img
+        src="panashe-profile.png"
+        alt="Panashe Chamani — ZIMCRAFT developer portrait"
+      >
+
+    </div>
+
+    <div class="profile-label">
+
+      <small>
+        ZIMCRAFT / CYBERSPACE
+      </small>
+
+      <strong>
+        Developer • Creator • Builder
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>
+<a
+  class="btn channel-btn"
+  href="https://whatsapp.com/channel/0029VbCztbz7DAWxPVFVnQ1C"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Follow Code & Build ZW on WhatsApp"
 >
-  ☰
-</button>
-
-<ul class="nav-links" id="navLinks">
-
-  <li><a href="#about">About</a></li>
-
-  <li><a href="#skills">Skills</a></li>
-
-  <li><a href="#projects">Projects</a></li>
-
-  <li><a href="#journey">Journey</a></li>
-
-  <li><a href="#services">Services</a></li>
-
-  <li>
-    <a class="nav-cta" href="#contact">
-      Let's Talk
-    </a>
-  </li>
-
-</ul>
-
-  </div>
-</header><main id="home"><!-- HERO --><section class="container hero">  <div class="reveal"><span class="status">
-  <span class="dot"></span>
-  Building, learning & exploring technology
-</span>
-
-<h1>
-  Panashe<br>
-  <span>Chamani.</span>
-</h1>
-
-<p class="hero-role">
-  <strong>Full-Stack Developer</strong>
-  · Digital Creator · Builder
-</p>
-
-<p class="hero-copy">
-  I build modern websites, web applications and digital experiences.
-  ZIMCRAFT is my digital space for turning ideas into practical projects,
-  learning through code and exploring what technology can create.
-</p>
-
-<div class="actions">
-
-  <a class="btn btn-primary" href="#projects">
-    🚀 Explore My Work
-  </a>
-
-  <a class="btn btn-secondary" href="#contact">
-    💬 Let's Connect
-  </a>
-
-</div>
-
-<div class="hero-meta">
-
-  <span>
-    Based in <b>Zimbabwe</b>
-  </span>
-
-  <span>
-    Focus <b>Web & Digital</b>
-  </span>
-
-  <span>
-    Identity <b>Cyberspace</b>
-  </span>
-
-</div>
-
-  </div>  <div class="profile-shell reveal"><div class="profile-glow"></div>
-
-<div class="profile-card">
-
-  <img
-    src="panashe-profile.png"
-    alt="Panashe Chamani — ZIMCRAFT developer portrait"
-  >
-
-</div>
-
-<div class="profile-label">
-
-  <small>
-    ZIMCRAFT / CYBERSPACE
-  </small>
-
-  <strong>
-    Developer • Creator • Builder
-  </strong>
-
-</div>
-
-  </div></section><!-- TRUST --><div class="trust">  <div class="container trust-row"><span>
-  <strong>ZIMCRAFT</strong>
-  — personal digital brand
-</span>
-
-<span>Web Development</span>
-
-<span>Digital Platforms</span>
-
-<span>Continuous Learning</span>
-
-  </div></div><!-- ABOUT --><section id="about">  <div class="container about-grid"><div class="bio-photo reveal">
-
-  <img
-    src="panashe-profile.png"
-    alt="Panashe Chamani in a modern developer workspace"
-  >
-
-  <div class="bio-badge">
-
-    <b>Panashe Chamani</b>
-
-    <span>CYBERSPACE</span>
-
-  </div>
-
-</div>
-
-<div class="bio-copy reveal">
-
-  <div class="section-head">
-
-    <div class="eyebrow">
-      01 / ABOUT
-    </div>
-
-    <h2 class="section-title">
-      The person behind
-      <span>ZIMCRAFT.</span>
-    </h2>
-
-    <p class="section-text">
-      A developer identity built around curiosity,
-      creativity and practical digital work.
-    </p>
-
-  </div>
-
-  <p>
-    I'm <strong>Panashe Chamani</strong>, professionally known as
-    <strong>Cyberspace</strong>.
-    I am a technology-focused developer and digital creator interested
-    in websites, web applications, APIs and digital platforms.
-  </p>
-
-  <p>
-    My approach is simple: learn by building.
-    I enjoy turning ideas into working digital experiences while
-    continuously improving my technical and creative skills.
-  </p>
-
-  <p>
-    ZIMCRAFT represents that journey — a place where development,
-    experimentation, design and technology come together.
-  </p>
-
-  <div class="quote">
-    “Keep learning. Keep building. Turn ideas into meaningful
-    digital experiences.”
-  </div>
-
-  <div class="stats">
-
-    <div class="stat">
-      <b>∞</b>
-      <span>Learning mindset</span>
-    </div>
-
-    <div class="stat">
-      <b>01</b>
-      <span>Digital identity</span>
-    </div>
-
-    <div class="stat">
-      <b>🌍</b>
-      <span>Global vision</span>
-    </div>
-
-  </div>
-
-</div>
-
-  </div></section><!-- SKILLS --><section class="skills" id="skills">  <div class="container"><div class="section-head reveal">
-
-  <div class="eyebrow">
-    02 / TOOLKIT
-  </div>
-
-  <h2 class="section-title">
-    Technologies I
-    <span>work with.</span>
-  </h2>
-
-  <p class="section-text">
-    A practical toolkit for building modern digital experiences.
-  </p>
-
-</div>
-
-<div class="skill-grid">
-
-  <article class="skill reveal">
-    <div class="skill-icon">🌐</div>
-    <h3>HTML5</h3>
-    <p>Semantic, structured web interfaces.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">🎨</div>
-    <h3>CSS3</h3>
-    <p>Responsive layouts, styling and motion.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">⚡</div>
-    <h3>JavaScript</h3>
-    <p>Interactive and dynamic web experiences.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">⚛️</div>
-    <h3>React</h3>
-    <p>Component-based user interfaces.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">🟢</div>
-    <h3>Node.js</h3>
-    <p>Backend development and APIs.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">🐍</div>
-    <h3>Python</h3>
-    <p>Programming and problem solving.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">🍃</div>
-    <h3>MongoDB</h3>
-    <p>Database-driven applications.</p>
-  </article>
-
-  <article class="skill reveal">
-    <div class="skill-icon">🔧</div>
-    <h3>Git</h3>
-    <p>Version control and project workflow.</p>
-  </article>
-
-</div>
-
-  </div></section><!-- PROJECTS --><section id="projects">  <div class="container"><div class="section-head reveal">
-
-  <div class="eyebrow">
-    03 / SELECTED WORK
-  </div>
-
-  <h2 class="section-title">
-    Things I'm
-    <span>building.</span>
-  </h2>
-
-  <p class="section-text">
-    A growing collection of digital projects and experiments
-    from the ZIMCRAFT journey.
-  </p>
-
-</div>
-
-<div class="projects-grid">
-
-  <!-- ZIMONLINE -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div class="project-icon">
-        📍
-      </div>
-
-      <span class="project-number">
-        01
-      </span>
-
-    </div>
-
-    <h3>
-      ZimONLINE
-    </h3>
-
-    <p>
-      A Zimbabwe-focused local business directory and advertising
-      platform connecting businesses with customers.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">Supabase</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="#"
-    >
-      View project →
-    </a>
-
-  </article>
-
-  <!-- CHAMANISTREAM -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div class="project-icon">
-        ▶
-      </div>
-
-      <span class="project-number">
-        02
-      </span>
-
-    </div>
-
-    <h3>
-      ChamaniStream Global
-    </h3>
-
-    <p>
-      A streaming-focused digital platform concept for movies,
-      series, TV and entertainment content.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">JavaScript</span>
-      <span class="tag">API</span>
-      <span class="tag">Responsive UI</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="https://chamanistream.onrender.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View project →
-    </a>
-
-  </article>
-
-  <!-- IYF -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div class="project-icon">
-        🎓
-      </div>
-
-      <span class="project-number">
-        03
-      </span>
-
-    </div>
-
-    <h3>
-      IYF Tech Academy
-    </h3>
-
-    <p>
-      A technology education initiative focused on helping beginners
-      learn web development through practical projects.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">Education</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="https://iyf-wa6c.onrender.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View project →
-    </a>
-
-  </article>
-
-  <!-- TOP TAEKWONDO -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div class="project-icon">
-        🥋
-      </div>
-
-      <span class="project-number">
-        04
-      </span>
-
-    </div>
-
-    <h3>
-      Top Taekwondo
-    </h3>
-
-    <p>
-      Digital work supporting a Taekwondo academy through web presence,
-      information and promotional content.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">Web</span>
-      <span class="tag">Design</span>
-      <span class="tag">Content</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="https://toptaekwondo.zone.id"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View project →
-    </a>
-
-  </article>
-
-  <!-- DIGITAL EXPERIMENTS -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div class="project-icon">
-        💡
-      </div>
-
-      <span class="project-number">
-        05
-      </span>
-
-    </div>
-
-    <h3>
-      Digital Experiments
-    </h3>
-
-    <p>
-      Small experiments used to learn interfaces, APIs,
-      responsive design and modern development workflows.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">APIs</span>
-      <span class="tag">UI</span>
-      <span class="tag">JavaScript</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="#"
-    >
-      Explore →
-    </a>
-
-  </article>
-
-  <!-- MORE IN PROGRESS -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div class="project-icon">
-        🚀
-      </div>
-
-      <span class="project-number">
-        06
-      </span>
-
-    </div>
-
-    <h3>
-      More in progress
-    </h3>
-
-    <p>
-      ZIMCRAFT is continuously evolving as new ideas become
-      prototypes, websites and digital products.
-    </p>
-
-    <div class="tags">
-
-      <span class="tag">Build</span>
-      <span class="tag">Learn</span>
-      <span class="tag">Improve</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="#contact"
-    >
-      Start something →
-    </a>
-
-  </article>
-
-</div>
-
-  </div></section><!-- JOURNEY --><section class="journey" id="journey">  <div class="container"><div class="section-head reveal">
-
-  <div class="eyebrow">
-    04 / JOURNEY
-  </div>
-
-  <h2 class="section-title">
-    Learning through
-    <span>building.</span>
-  </h2>
-
-  <p class="section-text">
-    The portfolio focuses on practical work,
-    continuous learning and community contribution.
-  </p>
-
-</div>
-
-<div class="timeline">
-
-  <div class="timeline-item reveal">
-
-    <div class="timeline-date">
-      FOUNDATION
-    </div>
-
-    <h3>
-      Web Development
-    </h3>
-
-    <p>
-      Built a foundation in HTML, CSS and JavaScript through
-      hands-on learning and practical projects.
-    </p>
-
-  </div>
-
-  <div class="timeline-item reveal">
-
-    <div class="timeline-date">
-      FULL-STACK PATH
-    </div>
-
-    <h3>
-      Expanding the Stack
-    </h3>
-
-    <p>
-      Explored React, Node.js, databases, APIs and the wider
-      workflow required to build complete digital products.
-    </p>
-
-  </div>
-
-  <div class="timeline-item reveal">
-
-    <div class="timeline-date">
-      COMMUNITY
-    </div>
-
-    <h3>
-      Teaching & Sharing
-    </h3>
-
-    <p>
-      Supported beginners with web development fundamentals
-      and practical learning activities.
-    </p>
-
-  </div>
-
-  <div class="timeline-item reveal">
-
-    <div class="timeline-date">
-      ZIMCRAFT
-    </div>
-
-    <h3>
-      Build. Learn. Create.
-    </h3>
-
-    <p>
-      ZIMCRAFT brings the journey together as a personal
-      digital brand and home for current and future projects.
-    </p>
-
-  </div>
-
-</div>
-
-  </div></section><!-- SERVICES --><section id="services">  <div class="container"><div class="section-head reveal">
-
-  <div class="eyebrow">
-    05 / SERVICES
-  </div>
-
-  <h2 class="section-title">
-    What I can
-    <span>build.</span>
-  </h2>
-
-  <p class="section-text">
-    Digital solutions focused on useful interfaces,
-    responsive experiences and practical functionality.
-  </p>
-
-</div>
-
-<div class="services-grid">
-
-  <article class="service reveal">
-
-    <div class="service-icon">
-      🌐
-    </div>
-
-    <h3>
-      Websites
-    </h3>
-
-    <p>
-      Modern responsive websites for personal brands,
-      organizations and businesses.
-    </p>
-
-    <ul>
-      <li>Responsive design</li>
-      <li>Modern UI</li>
-      <li>SEO foundations</li>
-      <li>Mobile-first experience</li>
-    </ul>
-
-  </article>
-
-  <article class="service reveal">
-
-    <div class="service-icon">
-      ⚙️
-    </div>
-
-    <h3>
-      Web Applications
-    </h3>
-
-    <p>
-      Interactive digital products powered by frontend
-      and backend technologies.
-    </p>
-
-    <ul>
-      <li>JavaScript applications</li>
-      <li>API integration</li>
-      <li>Database integration</li>
-      <li>User-focused interfaces</li>
-    </ul>
-
-  </article>
-
-  <article class="service reveal">
-
-    <div class="service-icon">
-      💡
-    </div>
-
-    <h3>
-      Digital Projects
-    </h3>
-
-    <p>
-      From concept to prototype, turning ideas into
-      practical digital experiences.
-    </p>
-
-    <ul>
-      <li>Project planning</li>
-      <li>UI concepts</li>
-      <li>Technical exploration</li>
-      <li>Continuous improvement</li>
-    </ul>
-
-  </article>
-
-</div>
-
-  </div></section><!-- CONTACT --><section id="contact">  <div class="container"><div class="contact-box reveal">
-
-  <div>
-
-    <div class="eyebrow">
-      06 / CONTACT
-    </div>
-
-    <h2>
-      Have an idea?<br>
-      <span>Let's build it.</span>
-    </h2>
-
-    <p>
-      Whether it's a website, digital platform or a new idea
-      you want to explore, ZIMCRAFT is open to meaningful
-      projects and collaborations.
-    </p>
-
-  </div>
-
-  <div class="actions">
-
-    <a
-      class="btn btn-primary"
-      href="mailto:panashechamani175@gmail.com"
-    >
-      ✉️ Email Me
-    </a>
-
-    <a
-      class="btn btn-secondary"
-      href="tel:+263787770395"
-    >
-      📱 Call
-    </a>
-
-  </div>
-
-</div>
-
-  </div></section></main><!-- FOOTER --><footer>  <div class="container footer-row"><div>
-
-  <div class="brand">
-
-    <span class="brand-mark">
-      Z
+  <span>📢 Follow My Channel</span>
+</a>
+        <a
+          class="btn whatsapp-btn"
+          href="https://wa.me/263787770395"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact Panashe Chamani on WhatsApp"
+        >
+          💬 WhatsApp
+        </a>
+
+<!-- TRUST -->
+
+<div class="trust">
+
+  <div class="container trust-row">
+
+    <span>
+      <strong>ZIMCRAFT</strong>
+      — personal digital brand
     </span>
 
-    <span class="brand-name">
-      ZIM<span>CRAFT</span>
-    </span>
+    <span>Web Development</span>
+
+    <span>Digital Platforms</span>
+
+    <span>Continuous Learning</span>
 
   </div>
 
-  <p class="footer-copy">
-    © 2026 ZIMCRAFT · Panashe Chamani · Built with curiosity & code.
-  </p>
-
 </div>
 
-<div class="socials">
+<!-- ABOUT -->
 
-  <a href="#home">
-    Home
-  </a>
+<section id="about">
 
-  <a href="#projects">
-    Projects
-  </a>
+  <div class="container about-grid">
 
-  <a href="#contact">
-    Contact
-  </a>
+    <div class="bio-photo reveal">
 
-</div>
+      <img
+        src="panashe-profile.png"
+        alt="Panashe Chamani in a modern developer workspace"
+      >
 
-  </div></footer><script>
+      <div class="bio-badge">
+
+        <b>Panashe Chamani</b>
+
+        <span>CYBERSPACE</span>
+
+      </div>
+
+    </div>
+
+    <div class="bio-copy reveal">
+
+      <div class="section-head">
+
+        <div class="eyebrow">
+          01 / ABOUT
+        </div>
+
+        <h2 class="section-title">
+          The person behind
+          <span>ZIMCRAFT.</span>
+        </h2>
+
+        <p class="section-text">
+          A developer identity built around curiosity,
+          creativity and practical digital work.
+        </p>
+
+      </div>
+
+      <p>
+        I'm <strong>Panashe Chamani</strong>, professionally known as
+        <strong>Cyberspace</strong>.
+        I am a technology-focused developer and digital creator interested
+        in websites, web applications, APIs and digital platforms.
+      </p>
+
+      <p>
+        My approach is simple: learn by building.
+        I enjoy turning ideas into working digital experiences while
+        continuously improving my technical and creative skills.
+      </p>
+
+      <p>
+        ZIMCRAFT represents that journey — a place where development,
+        experimentation, design and technology come together.
+      </p>
+
+      <div class="quote">
+        “Keep learning. Keep building. Turn ideas into meaningful
+        digital experiences.”
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <b>∞</b>
+          <span>Learning mindset</span>
+        </div>
+
+        <div class="stat">
+          <b>01</b>
+          <span>Digital identity</span>
+        </div>
+
+        <div class="stat">
+          <b>🌍</b>
+          <span>Global vision</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow">
+        02 / TOOLKIT
+      </div>
+
+      <h2 class="section-title">
+        Technologies I
+        <span>work with.</span>
+      </h2>
+
+      <p class="section-text">
+        A practical toolkit for building modern digital experiences.
+      </p>
+
+    </div>
+
+    <div class="skill-grid">
+
+      <article class="skill reveal">
+        <div class="skill-icon">🌐</div>
+        <h3>HTML5</h3>
+        <p>Semantic, structured web interfaces.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">🎨</div>
+        <h3>CSS3</h3>
+        <p>Responsive layouts, styling and motion.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">⚡</div>
+        <h3>JavaScript</h3>
+        <p>Interactive and dynamic web experiences.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">⚛️</div>
+        <h3>React</h3>
+        <p>Component-based user interfaces.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">🟢</div>
+        <h3>Node.js</h3>
+        <p>Backend development and APIs.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">🐍</div>
+        <h3>Python</h3>
+        <p>Programming and problem solving.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">🍃</div>
+        <h3>MongoDB</h3>
+        <p>Database-driven applications.</p>
+      </article>
+
+      <article class="skill reveal">
+        <div class="skill-icon">🔧</div>
+        <h3>Git</h3>
+        <p>Version control and project workflow.</p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow">
+        03 / SELECTED WORK
+      </div>
+
+      <h2 class="section-title">
+        Things I'm
+        <span>building.</span>
+      </h2>
+
+      <p class="section-text">
+        A growing collection of digital projects and experiments
+        from the ZIMCRAFT journey.
+      </p>
+
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project reveal">
+
+        <div class="project-top">
+
+          <div class="project-icon">
+            📍
+          </div>
+
+          <span class="project-number">
+            01
+          </span>
+
+        </div>
+
+        <h3>
+          ZimONLINE
+        </h3>
+
+        <p>
+          A Zimbabwe-focused local business directory and advertising
+          platform connecting businesses with customers.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Supabase</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="#"
+        >
+          View project →
+        </a>
+
+      </article>
+
+      <article class="project reveal">
+
+        <div class="project-top">
+
+          <div class="project-icon">
+            ▶
+          </div>
+
+          <span class="project-number">
+            02
+          </span>
+
+        </div>
+
+        <h3>
+          ChamaniStream Global
+        </h3>
+
+        <p>
+          A streaming-focused digital platform concept for movies,
+          series, TV and entertainment content.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">JavaScript</span>
+          <span class="tag">API</span>
+          <span class="tag">Responsive UI</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="https://chamanistream.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View project →
+        </a>
+
+      </article>
+
+      <article class="project reveal">
+
+        <div class="project-top">
+
+          <div class="project-icon">
+            🎓
+          </div>
+
+          <span class="project-number">
+            03
+          </span>
+
+        </div>
+
+        <h3>
+          IYF Tech Academy
+        </h3>
+
+        <p>
+          A technology education initiative focused on helping beginners
+          learn web development through practical projects.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Education</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="https://iyf-wa6c.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View project →
+        </a>
+
+      </article>
+
+      <article class="project reveal">
+
+        <div class="project-top">
+
+          <div class="project-icon">
+            🥋
+          </div>
+
+          <span class="project-number">
+            04
+          </span>
+
+        </div>
+
+        <h3>
+          Top Taekwondo
+        </h3>
+
+        <p>
+          Digital work supporting a Taekwondo academy through web presence,
+          information and promotional content.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Web</span>
+          <span class="tag">Design</span>
+          <span class="tag">Content</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="https://toptaekwondo.zone.id"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View project →
+        </a>
+
+      </article>
+
+      <article class="project reveal">
+
+        <div class="project-top">
+
+          <div class="project-icon">
+            💡
+          </div>
+
+          <span class="project-number">
+            05
+          </span>
+
+        </div>
+
+        <h3>
+          Digital Experiments
+        </h3>
+
+        <p>
+          Small experiments used to learn interfaces, APIs,
+          responsive design and modern development workflows.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">APIs</span>
+          <span class="tag">UI</span>
+          <span class="tag">JavaScript</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="#"
+        >
+          Explore →
+        </a>
+
+      </article>
+
+      <article class="project reveal">
+
+        <div class="project-top">
+
+          <div class="project-icon">
+            🚀
+          </div>
+
+          <span class="project-number">
+            06
+          </span>
+
+        </div>
+
+        <h3>
+          More in progress
+        </h3>
+
+        <p>
+          ZIMCRAFT is continuously evolving as new ideas become
+          prototypes, websites and digital products.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Build</span>
+          <span class="tag">Learn</span>
+          <span class="tag">Improve</span>
+
+        </div>
+
+        <a
+          class="project-link"
+          href="#contact"
+        >
+          Start something →
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- JOURNEY -->
+
+<section class="journey" id="journey">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow">
+        04 / JOURNEY
+      </div>
+
+      <h2 class="section-title">
+        Learning through
+        <span>building.</span>
+      </h2>
+
+      <p class="section-text">
+        The portfolio focuses on practical work,
+        continuous learning and community contribution.
+      </p>
+
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-date">
+          FOUNDATION
+        </div>
+
+        <h3>
+          Web Development
+        </h3>
+
+        <p>
+          Built a foundation in HTML, CSS and JavaScript through
+          hands-on learning and practical projects.
+        </p>
+
+      </div>
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-date">
+          FULL-STACK PATH
+        </div>
+
+        <h3>
+          Expanding the Stack
+        </h3>
+
+        <p>
+          Explored React, Node.js, databases, APIs and the wider
+          workflow required to build complete digital products.
+        </p>
+
+      </div>
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-date">
+          COMMUNITY
+        </div>
+
+        <h3>
+          Teaching & Sharing
+        </h3>
+
+        <p>
+          Supported beginners with web development fundamentals
+          and practical learning activities.
+        </p>
+
+      </div>
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-date">
+          ZIMCRAFT
+        </div>
+
+        <h3>
+          Build. Learn. Create.
+        </h3>
+
+        <p>
+          ZIMCRAFT brings the journey together as a personal
+          digital brand and home for current and future projects.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div class="eyebrow">
+        05 / SERVICES
+      </div>
+
+      <h2 class="section-title">
+        What I can
+        <span>build.</span>
+      </h2>
+
+      <p class="section-text">
+        Digital solutions focused on useful interfaces,
+        responsive experiences and practical functionality.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service reveal">
+
+        <div class="service-icon">
+          🌐
+        </div>
+
+        <h3>
+          Websites
+        </h3>
+
+        <p>
+          Modern responsive websites for personal brands,
+          organizations and businesses.
+        </p>
+
+        <ul>
+          <li>Responsive design</li>
+          <li>Modern UI</li>
+          <li>SEO foundations</li>
+          <li>Mobile-first experience</li>
+        </ul>
+
+      </article>
+
+      <article class="service reveal">
+
+        <div class="service-icon">
+          ⚙️
+        </div>
+
+        <h3>
+          Web Applications
+        </h3>
+
+        <p>
+          Interactive digital products powered by frontend
+          and backend technologies.
+        </p>
+
+        <ul>
+          <li>JavaScript applications</li>
+          <li>API integration</li>
+          <li>Database integration</li>
+          <li>User-focused interfaces</li>
+        </ul>
+
+      </article>
+
+      <article class="service reveal">
+
+        <div class="service-icon">
+          💡
+        </div>
+
+        <h3>
+          Digital Projects
+        </h3>
+
+        <p>
+          From concept to prototype, turning ideas into
+          practical digital experiences.
+        </p>
+
+        <ul>
+          <li>Project planning</li>
+          <li>UI concepts</li>
+          <li>Technical exploration</li>
+          <li>Continuous improvement</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact-box reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          06 / CONTACT
+        </div>
+
+        <h2>
+          Have an idea?<br>
+          <span>Let's build it.</span>
+        </h2>
+
+        <p>
+          Whether it's a website, digital platform or a new idea
+          you want to explore, ZIMCRAFT is open to meaningful
+          projects and collaborations.
+        </p>
+
+      </div>
+
+      <div class="actions">
+
+        <a
+          class="btn btn-primary"
+          href="mailto:hello@zimcraft.zone.id"
+        >
+          ✉️ Email Me
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="tel:+263787770395"
+        >
+          📱 Call
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-row">
+
+    <div>
+
+      <div class="brand">
+
+        <span class="brand-mark">
+          Z
+        </span>
+
+        <span class="brand-name">
+          ZIM<span>CRAFT</span>
+        </span>
+
+      </div>
+
+      <p class="footer-copy">
+        © 2026 ZIMCRAFT · Panashe Chamani · Built with curiosity & code.
+      </p>
+
+    </div>
+
+    <div class="socials">
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#projects">
+        Projects
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
 
 const menu = document.getElementById("menu");
 const navLinks = document.getElementById("navLinks");
@@ -1762,5 +2059,7 @@ document
   .querySelectorAll(".reveal")
   .forEach(el => observer.observe(el));
 
-</script></body>
+</script>
+
+</body>
 </html>
