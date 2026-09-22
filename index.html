@@ -1,1026 +1,622 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Panashe Chamani | Cyberspace — Full Stack Developer &amp; Digital Creator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZIMCRAFT | Panashe Chamani — Full-Stack Developer & Digital Creator</title>
+
+<meta name="description" content="ZIMCRAFT is the personal digital portfolio of Panashe Chamani — a developer and digital creator building modern websites, web applications and digital experiences.">
+<meta name="keywords" content="ZIMCRAFT, Panashe Chamani, Cyberspace, web developer, full stack developer, Zimbabwe developer, JavaScript, React, Node.js, Python, MongoDB, web development">
+<meta name="author" content="Panashe Chamani">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#070b14">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZIMCRAFT | Panashe Chamani">
+<meta property="og:description" content="Turning ideas into digital experiences.">
+<meta property="og:image" content="panashe-profile.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZIMCRAFT | Panashe Chamani">
+<meta name="twitter:description" content="Developer • Digital Creator • Builder">
+<meta name="twitter:image" content="panashe-profile.png">
+
 <style>
-        :root {
-            --bg-color: #ffffff;
-            --bg-alt: #f8fafc;
-            --bg-dark: #0f172a;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            
-            /* Purple & Blue Theme */
-            --primary: #6366f1;
-            --secondary: #3b82f6;
-            --accent: #8b5cf6;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-            
-           
-            --tag-blue: #dbeafe;
-            --tag-purple: #e0e7ff;
-            --tag-green: #d1fae5;
-            --tag-orange: #ffedd5;
-            
-            --font-main: 'Segoe UI', system-ui, sans-serif;
-            --transition: all 0.3s ease;
-        }
-
-        /* --- 2. GLOBAL RESET --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-main); background: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 100px 0; }
-        .text-center { text-align: center; }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            background: var(--gradient);
-            -webkit-background-clip: text;            -webkit-text-fill-color: transparent;
-        }
-        
-        .section-subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-        }
-
-        /* --- 4. HEADER & WORKING MENU --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo { font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        .btn-nav {
-            padding: 10px 25px;
-            background: var(--gradient);
-            color: white !important;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-        .bar { width: 25px; height: 3px; background-color: var(--text-main); transition: var(--transition); }
-
-        /* --- 5. HERO SECTION WITH FULL NAME --- */
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 100px;
-            display: flex;            align-items: center;
-            gap: 60px;
-            min-height: 100vh;
-        }
-        
-        .hero-content { flex: 1; }
-        
-        .greeting {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--tag-purple);
-            color: var(--primary);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--text-main);
-        }
-        
-        .hero h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero-title {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 550px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-        
-        .btn-primary {            padding: 15px 35px;
-            background: var(--gradient);
-            color: white;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3); }
-        
-        .btn-secondary {
-            padding: 15px 35px;
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .btn-secondary:hover { background: var(--tag-purple); }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .profile-wrapper {
-            position: relative;
-            width: 400px;
-            height: 400px;
-        }
-        
-        .profile-pic {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
-            border: 5px solid white;
-            animation: morph 8s ease-in-out infinite;
-        }
-        
-        .floating-badge {
-            position: absolute;            background: white;
-            padding: 15px 25px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .badge-1 { top: 20px; right: 0; background: var(--tag-green); color: #059669; }
-        .badge-2 { bottom: 40px; left: -20px; background: var(--tag-blue); color: #2563eb; animation-delay: 1.5s; }
-
-        @keyframes morph {
-            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* --- 6. ABOUT & EDUCATION SECTION --- */
-        .about { background: var(--bg-alt); }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-        
-        .about-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .about-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-                .about-card p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; }
-        
-        .education-box {
-            background: var(--gradient);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .education-box::before {
-            content: "🎓";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 100px;
-            opacity: 0.1;
-        }
-        
-        .education-box h4 { font-size: 1.3rem; margin-bottom: 10px; }
-        .education-box .school-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
-        .education-box p { opacity: 0.9; font-size: 0.95rem; }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .skill-tag {
-            padding: 8px 16px;
-            background: var(--tag-purple);
-            color: var(--primary);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .skill-tag:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2); }
-
-        /* --- 7. CONTRIBUTIONS & SKILLS GRID --- */
-        .contributions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;        }
-
-        .contrib-card {
-            background: white;
-            padding: 35px;
-            border-radius: 16px;
-            border: 2px solid #e2e8f0;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contrib-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .contrib-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--primary);
-        }
-        
-        .contrib-card:hover::before { transform: scaleX(1); }
-
-        .contrib-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .icon-hostify { background: var(--tag-blue); }
-        .icon-worldtech { background: var(--tag-purple); }
-        .icon-blacknode { background: #1e293b; color: white; }
-        .icon-hackerrank { background: var(--tag-green); }
-
-        .contrib-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-main); }
-        .contrib-card .role {             display: inline-block;
-            padding: 4px 12px;
-            background: var(--tag-orange);
-            color: #ea580c;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .contrib-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
-        
-        .contrib-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-        }
-        
-        .contrib-tag {
-            padding: 5px 12px;
-            background: var(--bg-alt);
-            color: var(--text-muted);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* --- 8. SERVICES SECTION --- */
-        .services { background: var(--bg-alt); }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .pricing-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid #e2e8f0;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .pricing-card.featured {
-            border-color: var(--primary);
-            transform: scale(1.05);            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.15);
-        }
-        
-        .featured-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient);
-            color: white;
-            padding: 5px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-        
-        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .price { font-size: 3rem; font-weight: 800; color: var(--primary); margin: 20px 0; }
-        .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
-        .pricing-card ul { margin: 30px 0; }
-        .pricing-card li { 
-            padding: 10px 0; 
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .pricing-card li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
-
-        /* --- 9. FOOTER --- */
-        footer { background: var(--bg-dark); color: white; padding: 80px 0 30px 0; }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 60px;
-        }
-        .footer-col h4 { font-size: 1.3rem; margin-bottom: 25px; color: white; }
-        .footer-col p { color: #94a3b8; line-height: 1.8; margin-bottom: 20px; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { color: #94a3b8; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
-        .footer-col ul li a:hover { color: var(--secondary); padding-left: 5px; }
-        
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-        .social-icon:hover { background: var(--primary); transform: translateY(-3px); }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        /* --- 10. ANIMATIONS --- */
-        .hidden { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
-        .show { opacity: 1; transform: translateY(0); }
-        
-        .shadow-sm { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-        .shadow-lg { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-
-        /* --- 11. MOBILE RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hamburger { display: flex; z-index: 1001; }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 75%;
-                background: white;
-                flex-direction: column;
-                justify-content: center;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: 0.4s ease;
-            }
-            .nav-links.active { right: 0; }
-            .hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
-            
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-buttons { justify-content: center; }
-            .profile-wrapper { width: 300px; height: 300px; margin: 0 auto; }
-            .floating-badge { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
-            .pricing-card.featured { transform: scale(1); }
-        }    
-/* --- PROFESSIONAL BIOGRAPHY SECTION --- */
-.biography-section {
-    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+:root{
+  --bg:#070b14;
+  --bg2:#0b1120;
+  --surface:#101827;
+  --surface2:#151f32;
+  --line:rgba(255,255,255,.09);
+  --text:#f7f9fc;
+  --muted:#9aa8bc;
+  --blue:#3b82f6;
+  --cyan:#22d3ee;
+  --violet:#8b5cf6;
+  --green:#22c55e;
+  --gradient:linear-gradient(135deg,#3b82f6,#22d3ee 55%,#8b5cf6);
+  --shadow:0 25px 80px rgba(0,0,0,.35);
+  --radius:24px;
+  --max:1180px;
 }
 
-.bio-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 70px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 85% 5%,rgba(59,130,246,.13),transparent 28%),
+    radial-gradient(circle at 10% 35%,rgba(139,92,246,.08),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
 }
-
-.bio-photo {
-    position: relative;
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+section{padding:105px 0}
+.section-head{max-width:700px;margin-bottom:48px}
+.eyebrow{
+  color:#67e8f9;
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:12px;
 }
-
-.bio-photo img {
-    width: 100%;
-    height: 620px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 24px;
-    box-shadow: 0 25px 60px rgba(30, 41, 59, 0.2);
+.section-title{font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;letter-spacing:-1.5px}
+.section-title span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
+.section-text{color:var(--muted);margin-top:15px;max-width:650px}
 
-.bio-name-card {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
-    padding: 20px;
-    border-radius: 16px;
-    background: rgba(15, 23, 42, 0.88);
-    backdrop-filter: blur(12px);
-    color: white;
+header{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:1000;
+  background:rgba(7,11,20,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
-
-.bio-name-card strong {
-    display: block;
-    font-size: 1.3rem;
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-
-.bio-name-card span {
-    display: block;
-    color: #a5b4fc;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    margin-top: 5px;
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:1px}
+.brand-mark{
+  width:38px;height:38px;border-radius:12px;
+  display:grid;place-items:center;
+  background:var(--gradient);
+  color:white;font-weight:950;
+  box-shadow:0 10px 30px rgba(59,130,246,.25);
 }
-
-.bio-label {
-    color: var(--primary);
-    font-weight: 800;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
+.brand-name{font-size:1.05rem}
+.brand-name b{color:#67e8f9}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{color:#c5cfde;font-size:.92rem;font-weight:650;transition:.25s}
+.nav-links a:hover{color:white}
+.nav-cta{
+  padding:10px 18px!important;
+  border:1px solid rgba(103,232,249,.3);
+  background:rgba(34,211,238,.08);
+  border-radius:999px;
+  color:white!important;
 }
+.menu{display:none;background:none;border:0;color:white;font-size:1.7rem;cursor:pointer}
 
-.bio-content h3 {
-    font-size: 2.5rem;
-    margin: 12px 0 25px;
+.hero{
+  min-height:100vh;
+  padding-top:145px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:70px;
 }
-
-.bio-content h3 span {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.status{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:8px 13px;border:1px solid var(--line);
+  background:rgba(255,255,255,.035);
+  border-radius:999px;color:#cbd5e1;font-size:.82rem;
 }
-
-.bio-content p {
-    color: var(--text-muted);
-    margin-bottom: 18px;
-    line-height: 1.85;
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
+.hero h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.98;letter-spacing:-5px;margin:25px 0 20px}
+.hero h1 span{
+  display:block;
+  background:var(--gradient);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-
-.bio-quote {
-    margin-top: 30px;
-    padding: 25px;
-    border-left: 5px solid var(--primary);
-    background: white;
-    border-radius: 0 15px 15px 0;
-    color: var(--text-main);
-    font-weight: 600;
-    font-size: 1.05rem;
-    box-shadow: 0 10px 30px rgba(99,102,241,.08);
+.hero-role{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:650;color:#dbe7f5}
+.hero-role strong{color:#67e8f9}
+.hero-copy{max-width:650px;color:var(--muted);font-size:1.04rem;margin-top:20px}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 21px;border-radius:12px;font-weight:800;
+  transition:.25s;border:1px solid var(--line);
 }
+.btn-primary{background:var(--gradient);color:white;box-shadow:0 15px 35px rgba(59,130,246,.18)}
+.btn-secondary{background:rgba(255,255,255,.035);color:white}
+.btn:hover{transform:translateY(-3px)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:20px;margin-top:30px;color:#8190a6;font-size:.82rem}
+.hero-meta b{color:#e8edf5}
 
-.bio-quote span {
-    color: var(--primary);
-    font-size: 2rem;
-    line-height: 0;
+.profile-shell{position:relative;max-width:500px;margin:auto}
+.profile-glow{
+  position:absolute;inset:8% 8% -5%;
+  background:linear-gradient(135deg,rgba(59,130,246,.35),rgba(139,92,246,.22));
+  filter:blur(55px);z-index:-1;
 }
-
-.bio-stats {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+.profile-card{
+  padding:10px;border:1px solid rgba(255,255,255,.12);
+  border-radius:32px;background:rgba(255,255,255,.045);
+  box-shadow:var(--shadow);
 }
-
-.bio-stats div {
-    flex: 1;
-    min-width: 120px;
-    background: white;
-    padding: 18px;
-    border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+.profile-card img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;
+  border-radius:24px;
 }
-
-.bio-stats strong {
-    display: block;
-    font-size: 1.5rem;
-    color: var(--primary);
+.profile-label{
+  position:absolute;left:-22px;bottom:28px;
+  padding:14px 17px;border:1px solid var(--line);
+  border-radius:16px;background:rgba(10,16,29,.88);
+  backdrop-filter:blur(14px);box-shadow:var(--shadow);
 }
+.profile-label small{display:block;color:#7dd3fc;font-size:.68rem;letter-spacing:2px;font-weight:800}
+.profile-label strong{display:block;margin-top:3px}
 
-.bio-stats span {
-    display: block;
-    font-size: .8rem;
-    color: var(--text-muted);
-    margin-top: 5px;
+.trust{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:24px 0;background:rgba(255,255,255,.018);
 }
+.trust-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:#8290a5;font-size:.82rem}
+.trust-row strong{color:#dce5f2;font-size:1rem}
 
-@media (max-width: 768px) {
-    .bio-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.bio-photo{position:relative}
+.bio-photo img{width:100%;height:600px;object-fit:cover;object-position:center 18%;border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.bio-badge{
+  position:absolute;left:22px;bottom:22px;
+  padding:15px 18px;border-radius:16px;
+  background:rgba(7,11,20,.88);backdrop-filter:blur(15px);
+  border:1px solid var(--line)
+}
+.bio-badge b{display:block}.bio-badge span{font-size:.75rem;color:#67e8f9}
+.bio-copy p{color:var(--muted);margin:16px 0}
+.quote{
+  margin-top:25px;padding:20px 22px;
+  border-left:3px solid #22d3ee;
+  background:rgba(34,211,238,.045);
+  border-radius:0 16px 16px 0;color:#dce7f4;font-weight:650
+}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.stat{padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:16px}
+.stat b{font-size:1.5rem}.stat span{display:block;color:var(--muted);font-size:.76rem;margin-top:3px}
 
-    .bio-photo img {
-        height: 480px;
-    }
+.skills{background:rgba(255,255,255,.018)}
+.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.skill{
+  padding:22px;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  transition:.25s
+}
+.skill:hover{transform:translateY(-5px);border-color:rgba(103,232,249,.3)}
+.skill-icon{font-size:1.7rem;margin-bottom:13px}.skill h3{font-size:1rem}.skill p{font-size:.8rem;color:var(--muted);margin-top:5px}
 
-    .bio-content h3 {
-        font-size: 2rem;
-    }
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{
+  min-height:290px;padding:24px;border:1px solid var(--line);border-radius:22px;
+  background:linear-gradient(145deg,#101827,#0c1321);
+  display:flex;flex-direction:column;overflow:hidden;position:relative;transition:.3s
+}
+.project:hover{transform:translateY(-7px);border-color:rgba(59,130,246,.35);box-shadow:var(--shadow)}
+.project-top{display:flex;justify-content:space-between;align-items:center}
+.project-icon{
+  width:45px;height:45px;border-radius:14px;display:grid;place-items:center;
+  background:rgba(59,130,246,.12);font-size:1.3rem
+}
+.project-number{color:#526177;font-weight:900}
+.project h3{margin-top:25px;font-size:1.35rem}
+.project p{color:var(--muted);font-size:.9rem;margin-top:8px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:20px}
+.tag{font-size:.7rem;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.06);color:#b9c5d6}
+.project-link{margin-top:16px;color:#67e8f9;font-size:.82rem;font-weight:800}
+
+.journey{background:rgba(255,255,255,.018)}
+.timeline{max-width:850px;border-left:1px solid rgba(255,255,255,.12);margin-left:8px}
+.timeline-item{position:relative;padding:0 0 38px 35px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{
+  content:"";position:absolute;left:-6px;top:5px;width:11px;height:11px;
+  border-radius:50%;background:#22d3ee;box-shadow:0 0 18px rgba(34,211,238,.7)
+}
+.timeline-date{font-size:.72rem;letter-spacing:2px;color:#67e8f9;font-weight:800}
+.timeline h3{margin:7px 0 5px}.timeline p{color:var(--muted);font-size:.9rem}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{padding:28px;border:1px solid var(--line);border-radius:22px;background:#0d1524}
+.service-icon{font-size:1.8rem}.service h3{margin-top:15px}.service p{color:var(--muted);font-size:.88rem;margin-top:8px}
+.service ul{list-style:none;margin-top:15px}.service li{color:#bdc8d8;font-size:.82rem;padding:6px 0}.service li::before{content:"✓";color:#22d3ee;margin-right:8px;font-weight:900}
+
+.contact-box{
+  padding:50px;border:1px solid var(--line);border-radius:30px;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(34,211,238,.13),transparent 30%),
+    linear-gradient(135deg,#101827,#0b1220);
+  display:flex;justify-content:space-between;align-items:center;gap:30px
+}
+.contact-box h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05}
+.contact-box p{color:var(--muted);max-width:620px;margin-top:12px}
+
+footer{padding:50px 0 28px;border-top:1px solid var(--line)}
+.footer-row{display:flex;justify-content:space-between;gap:25px;align-items:center;flex-wrap:wrap}
+.footer-copy{color:#718096;font-size:.8rem}
+.socials{display:flex;gap:9px}.socials a{padding:9px 12px;border:1px solid var(--line);border-radius:10px;color:#aebbd0;font-size:.8rem}
+.socials a:hover{color:white;border-color:#3b82f6}
+
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:45px;text-align:center}
+  .hero-copy{margin-inline:auto}.actions,.hero-meta{justify-content:center}
+  .profile-shell{max-width:390px}
+  .about-grid{grid-template-columns:1fr}
+  .bio-photo{max-width:560px;margin:auto}
+  .skill-grid{grid-template-columns:repeat(2,1fr)}
+  .projects-grid,.services-grid{grid-template-columns:1fr 1fr}
+  .contact-box{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:700px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  section{padding:78px 0}
+  .nav-links{
+    position:fixed;top:78px;right:-100%;width:min(320px,86vw);height:calc(100vh - 78px);
+    background:#090f1c;border-left:1px solid var(--line);padding:35px 25px;
+    flex-direction:column;align-items:flex-start;transition:.3s
+  }
+  .nav-links.open{right:0}.menu{display:block}
+  .hero{padding-top:125px}.hero h1{letter-spacing:-3px}
+  .profile-label{left:8px}.bio-photo img{height:480px}
+  .stats{grid-template-columns:1fr}
+  .skill-grid,.projects-grid,.services-grid{grid-template-columns:1fr}
+  .contact-box{padding:32px 24px}
 }
 </style>
-<meta content="Official portfolio of Panashe Chamani, professionally known as Cyberspace — a Full Stack Developer and Digital Creator focused on websites, web applications, digital platforms and technology innovation." name="description"/>
-<meta content="Panashe Chamani, Cyberspace, Panashe Chamani Cyberspace, Full Stack Developer, Web Developer, Digital Creator, Technology Innovator, Zimbabwe Developer, African Developer, JavaScript, Node.js, Python, APIs, Web Applications, Digital Platforms, ChamaniStream Global, Top Taekwondo, Pixel Zim Tech" name="keywords"/>
-<meta content="Panashe Chamani" name="author"/>
-<meta content="index, follow" name="robots"/>
-<meta content="website" property="og:type"/>
-<meta content="Panashe Chamani | Cyberspace" property="og:title"/>
-<meta content="Official portfolio of Panashe Chamani, professionally known as Cyberspace." property="og:description"/>
-<meta content="https://zimcraft.zone.id/panashe-chamani-cyberspace.png" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"Person",
- "name":"Panashe Chamani",
- "alternateName":"Cyberspace",
- "jobTitle":"Full Stack Developer and Digital Creator",
- "description":"Panashe Chamani, professionally known as Cyberspace, is a technology-focused developer and digital creator interested in websites, web applications, APIs and digital platforms.",
- "image":"https://zimcraft.zone.id/panashe-chamani-cyberspace.png",
- "knowsAbout":["Web Development","JavaScript","HTML","CSS","Node.js","Python","APIs","Digital Platforms","Technology Innovation"]
-}
-</script>
-<link href="/favicon.png" rel="icon" type="image/png"/><link href="/favicon.png" rel="apple-touch-icon" type="image/png"/><meta content="https://zimcraft.zone.id/" property="og:url"/><meta content="Panashe Chamani, professionally known as Cyberspace" property="og:image:alt"/><meta content="https://zimcraft.zone.id/panashe-chamani-cyberspace.png" name="twitter:image"/><meta content="https://zimcraft.zone.id/" name="twitter:url"/><meta content="#6366f1" name="theme-color"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://zimcraft.zone.id/#website",
-      "url": "https://zimcraft.zone.id/",
-      "name": "ZimCraft | Panashe Chamani",
-      "alternateName": "Cyberspace",
-      "description": "Official portfolio and digital presence of Panashe Chamani, professionally known as Cyberspace."
-    },
-    {
-      "@type": "Person",
-      "@id": "https://zimcraft.zone.id/#panashe-chamani",
-      "name": "Panashe Chamani",
-      "alternateName": "Cyberspace",
-      "url": "https://zimcraft.zone.id/",
-      "image": "https://zimcraft.zone.id/panashe-chamani-cyberspace.png",
-      "jobTitle": "Full Stack Developer and Digital Creator",
-      "description": "Panashe Chamani, professionally known as Cyberspace, is a technology-focused developer and digital creator interested in websites, web applications, APIs and digital platforms.",
-      "knowsAbout": [
-        "Web Development",
-        "Full Stack Development",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "Node.js",
-        "Python",
-        "APIs",
-        "Digital Platforms",
-        "Technology Innovation"
-      ]
-    }
-  ]
-}
-</script>
 </head>
+
 <body>
+
 <header>
-<div class="container">
-<nav>
-<a class="logo" href="#">CYBERSPACE</a>
-<ul class="nav-links">
-<li><a href="#biography">Biography</a></li><li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contributions">Contributions</a></li>
-<li><a href="#services">Services</a></li>
-<li><a class="btn-nav" href="#contact">Hire Me</a></li>
-</ul>
-<div class="hamburger">
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-</div>
-</nav>
-</div>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="ZIMCRAFT home">
+      <span class="brand-mark">Z</span>
+      <span class="brand-name">ZIM<span>CRAFT</span></span>
+    </a>
+
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a class="nav-cta" href="#contact">Let's Talk</a></li>
+    </ul>
+  </div>
 </header>
+
+<main id="home">
+
 <section class="container hero">
-<div class="hero-content hidden">
-<span class="greeting">👋 Welcome to my official portfolio</span>
-<h1>Hi, I'm <span>Panashe Chamani</span></h1>
-<p class="hero-title">Professionally known as Cyberspace · Full Stack Developer &amp; Digital Creator</p>
-<p class="hero-description">I build modern websites, web applications and digital experiences. Driven by curiosity and technology, I turn ideas into practical digital projects while continuously learning and exploring innovation.</p>
-<div class="hero-buttons">
-<a class="btn-primary" href="#services">
-<span>🚀</span> View My Work
-                </a>
-<a class="btn-secondary" href="#contact">
-<span>📧</span> Contact Me
-                </a>
-</div>
-</div>
-<div class="hero-image hidden">
-<div class="profile-wrapper">
-<img alt="Panashe Chamani, professionally known as Cyberspace" class="profile-pic" src="panashe-chamani-cyberspace.png" style="object-position:center;"/>
-<div class="floating-badge badge-1">
-<span>💼</span> Available for Work                </div>
-<div class="floating-badge badge-2">💻 Digital Creator</div>
-</div>
-</div>
+  <div class="reveal">
+    <span class="status"><span class="dot"></span> Building, learning & exploring technology</span>
+
+    <h1>Panashe<br><span>Chamani.</span></h1>
+
+    <p class="hero-role">
+      <strong>Full-Stack Developer</strong> · Digital Creator · Builder
+    </p>
+
+    <p class="hero-copy">
+      I build modern websites, web applications and digital experiences.
+      ZIMCRAFT is my digital space for turning ideas into practical projects,
+      learning through code and exploring what technology can create.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="#projects">🚀 Explore My Work</a>
+      <a class="btn btn-secondary" href="#contact">💬 Let's Connect</a>
+    </div>
+
+    <div class="hero-meta">
+      <span>Based in <b>Zimbabwe</b></span>
+      <span>Focus <b>Web & Digital</b></span>
+      <span>Identity <b>Cyberspace</b></span>
+    </div>
+  </div>
+
+  <div class="profile-shell reveal">
+    <div class="profile-glow"></div>
+    <div class="profile-card">
+      <img src="panashe-profile.png" alt="Panashe Chamani — ZIMCRAFT developer portrait">
+    </div>
+    <div class="profile-label">
+      <small>ZIMCRAFT / CYBERSPACE</small>
+      <strong>Developer • Creator • Builder</strong>
+    </div>
+  </div>
 </section>
-<section class="section about" id="about">
-<div class="container">
-<div class="text-center hidden">
-<h2 class="section-title">About Me</h2>
-<p class="section-subtitle">Get to know my journey, identity and vision in technology</p>
+
+<div class="trust">
+  <div class="container trust-row">
+    <span><strong>ZIMCRAFT</strong> — personal digital brand</span>
+    <span>Web Development</span>
+    <span>Digital Platforms</span>
+    <span>Continuous Learning</span>
+  </div>
 </div>
-<div class="about-grid">
-<div class="about-card hidden">
-<h3><span>👨‍</span> Who I Am</h3>
-<p>I'm <strong>Panashe Chamani</strong>, professionally known as <strong>Cyberspace</strong>, a technology-focused Full Stack Developer and Digital Creator passionate about building modern, functional and user-centered digital experiences.</p>
-<p>My approach combines creativity, continuous learning and practical problem-solving. I am interested in web development, APIs, digital platforms and emerging technologies that can transform ideas into useful solutions.</p>
-<div class="skill-tags">
-<span class="skill-tag">JavaScript</span>
-<span class="skill-tag">React</span>
-<span class="skill-tag">Node.js</span>
-<span class="skill-tag">Python</span>
-<span class="skill-tag">MongoDB</span>
-<span class="skill-tag">Git</span>
-</div>
-</div>
-<div class="about-card hidden">
-<h3><span>🎓</span> My Education</h3>
-<p>
-                        I believe in continuous learning and practical experience. My technical foundation 
-                        was built through intensive hands-on training and real-world projects.
-                    </p>
-<div class="education-box">
-<h4>Certified Web Developer</h4>
-<div class="school-name">IYF FREE WEEKEND ACADEMY</div> <p>
-                            Intensive weekend program covering modern web development, 
-                            including HTML5, CSS3, JavaScript, React, Node.js, and database management. 
-                            Graduated with honors and completed multiple real-world projects.
-                        </p>
-<div class="skill-tags" style="margin-top: 15px;">
-<span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">2024 - 2025</span>
-<span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">Full Stack</span>
-</div>
-</div>
-<div style="margin-top: 25px; padding: 20px; background: var(--bg-alt); border-radius: 10px;">
-<h4 style="margin-bottom: 10px; color: var(--primary);">📚 Continuous Learning</h4>
-<ul style="color: var(--text-muted);">
-<li>✓ HackerRank Problem Solving</li>
-<li>✓ Open Source Contributions</li>
-<li>✓ Tech Community Participation</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="bio-photo reveal">
+      <img src="panashe-profile.png" alt="Panashe Chamani in a modern developer workspace">
+      <div class="bio-badge">
+        <b>Panashe Chamani</b>
+        <span>CYBERSPACE</span>
+      </div>
+    </div>
+
+    <div class="bio-copy reveal">
+      <div class="section-head">
+        <div class="eyebrow">01 / ABOUT</div>
+        <h2 class="section-title">The person behind <span>ZIMCRAFT.</span></h2>
+        <p class="section-text">A developer identity built around curiosity, creativity and practical digital work.</p>
+      </div>
+
+      <p>
+        I'm <strong>Panashe Chamani</strong>, professionally known as <strong>Cyberspace</strong>.
+        I am a technology-focused developer and digital creator interested in websites,
+        web applications, APIs and digital platforms.
+      </p>
+
+      <p>
+        My approach is simple: learn by building. I enjoy turning ideas into working
+        digital experiences while continuously improving my technical and creative skills.
+      </p>
+
+      <p>
+        ZIMCRAFT represents that journey — a place where development, experimentation,
+        design and technology come together.
+      </p>
+
+      <div class="quote">
+        “Keep learning. Keep building. Turn ideas into meaningful digital experiences.”
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>∞</b><span>Learning mindset</span></div>
+        <div class="stat"><b>01</b><span>Digital identity</span></div>
+        <div class="stat"><b>🌍</b><span>Global vision</span></div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section biography-section" id="biography">
-<div class="container">
-<div class="text-center hidden">
-<h2 class="section-title">My Biography</h2>
-<p class="section-subtitle">The story behind Panashe Chamani and the Cyberspace identity</p>
-</div>
-<div class="bio-layout">
-<div class="bio-photo hidden">
-<img alt="Panashe Chamani, professionally known as Cyberspace" src="panashe-chamani-cyberspace.png"/>
-<div class="bio-name-card">
-<strong>Panashe Chamani</strong>
-<span>CYBERSPACE</span>
-</div>
-</div>
-<div class="bio-content hidden">
-<span class="bio-label">DIGITAL JOURNEY</span>
-<h3>Panashe Chamani <span>× Cyberspace</span></h3>
-<p>
-<strong>Panashe Chamani</strong>, professionally known as <strong>Cyberspace</strong>,
-                    is a technology-focused Full Stack Developer and Digital Creator with a passion for
-                    exploring the possibilities of the modern internet.
-                </p>
-<p>
-                    His journey in technology is driven by curiosity, creativity and continuous learning.
-                    Through web development and digital projects, Panashe explores how technology can turn
-                    ideas into practical experiences for people, businesses and communities.
-                </p>
-<p>
-                    Under the <strong>Cyberspace</strong> identity, he focuses on building and experimenting
-                    with websites, web applications, APIs and digital platforms. His work reflects an interest
-                    in modern design, software development and the growing global digital ecosystem.
-                </p>
-<p>
-                    His technology journey includes projects and digital initiatives such as
-                    <strong>ChamaniStream Global</strong>, <strong>Top Taekwondo</strong> and
-                    <strong>Pixel Zim Tech</strong>. These projects represent an ongoing journey of
-                    experimentation, learning and building.
-                </p>
-<div class="bio-quote">
-<span>“</span>
-                    My goal is simple: keep learning, keep building and use technology to create meaningful digital experiences.
-                </div>
-<div class="bio-stats">
-<div><strong>01</strong><span>Digital Identity</span></div>
-<div><strong>∞</strong><span>Learning Mindset</span></div>
-<div><strong>🌍</strong><span>Global Vision</span></div>
-</div>
-</div>
-</div>
-</div>
+
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">02 / TOOLKIT</div>
+      <h2 class="section-title">Technologies I <span>work with.</span></h2>
+      <p class="section-text">A practical toolkit for building modern digital experiences.</p>
+    </div>
+
+    <div class="skill-grid">
+      <article class="skill reveal"><div class="skill-icon">🌐</div><h3>HTML5</h3><p>Semantic, structured web interfaces.</p></article>
+      <article class="skill reveal"><div class="skill-icon">🎨</div><h3>CSS3</h3><p>Responsive layouts, styling and motion.</p></article>
+      <article class="skill reveal"><div class="skill-icon">⚡</div><h3>JavaScript</h3><p>Interactive and dynamic web experiences.</p></article>
+      <article class="skill reveal"><div class="skill-icon">⚛️</div><h3>React</h3><p>Component-based user interfaces.</p></article>
+      <article class="skill reveal"><div class="skill-icon">🟢</div><h3>Node.js</h3><p>Backend development and APIs.</p></article>
+      <article class="skill reveal"><div class="skill-icon">🐍</div><h3>Python</h3><p>Programming and problem solving.</p></article>
+      <article class="skill reveal"><div class="skill-icon">🍃</div><h3>MongoDB</h3><p>Database-driven applications.</p></article>
+      <article class="skill reveal"><div class="skill-icon">🔧</div><h3>Git</h3><p>Version control and project workflow.</p></article>
+    </div>
+  </div>
 </section>
-<section class="section" id="contributions">
-<div class="container">
-<div class="text-center hidden">
-<h2 class="section-title">Skills &amp; Contributions</h2>
-<p class="section-subtitle">Projects, technologies and areas that form part of my digital journey</p>
-</div>
-<div class="contributions-grid">
-<div class="contrib-card hidden">
-<div class="contrib-icon icon-hostify">🚀</div>
-<span class="role">Web Developer</span>
-<h3>Hostify ZW</h3>
-<p>Developed and maintained web hosting client dashboards. Improved user experience and implemented new features for customer management systems.</p>
-<div class="contrib-tags">
-<span class="contrib-tag">React</span>
-<span class="contrib-tag">Node.js</span>
-<span class="contrib-tag">MongoDB</span>
-<span class="contrib-tag">REST API</span>
-</div>
-</div>
-<div class="contrib-card hidden">
-<div class="contrib-icon icon-worldtech">🌍</div> <span class="role">Tech Contributor</span>
-<h3>World of Tech</h3>
-<p>Created educational content and interactive tutorials. Mentored beginners in web development and organized tech workshops.</p>
-<div class="contrib-tags">
-<span class="contrib-tag">Teaching</span>
-<span class="contrib-tag">Content</span>
-<span class="contrib-tag">Mentorship</span>
-<span class="contrib-tag">Community</span>
-</div>
-</div>
-<div class="contrib-card hidden">
-<div class="contrib-icon icon-blacknode">⚛️</div>
-<span class="role">Backend Developer</span>
-<h3>Black Dark Node</h3>
-<p>Built scalable backend services and APIs. Focused on server architecture, database optimization, and security implementations.</p>
-<div class="contrib-tags">
-<span class="contrib-tag">Node.js</span>
-<span class="contrib-tag">Express</span>
-<span class="contrib-tag">PostgreSQL</span>
-<span class="contrib-tag">Docker</span>
-</div>
-</div>
-<div class="contrib-card hidden">
-<div class="contrib-icon icon-hackerrank">💻</div>
-<span class="role">Problem Solver</span>
-<h3>HackerRank</h3>
-<p>Active competitive programmer with 500+ problems solved. Ranked in top 10% for JavaScript and Problem Solving domains.</p>
-<div class="contrib-tags">
-<span class="contrib-tag">Algorithms</span>
-<span class="contrib-tag">Data Structures</span>
-<span class="contrib-tag">JavaScript</span>
-<span class="contrib-tag">Python</span>
-</div>
-</div>
-</div>
-</div>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">03 / SELECTED WORK</div>
+      <h2 class="section-title">Things I'm <span>building.</span></h2>
+      <p class="section-text">A growing collection of digital projects and experiments from the ZIMCRAFT journey.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project reveal">
+        <div class="project-top"><div class="project-icon">📍</div><span class="project-number">01</span></div>
+        <h3>ZimONLINE</h3>
+        <p>A Zimbabwe-focused local business directory and advertising platform connecting businesses with customers.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Supabase</span></div>
+        <a class="project-link" href="#">View project →</a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><div class="project-icon">▶</div><span class="project-number">02</span></div>
+        <h3>ChamaniStream Global</h3>
+        <p>A streaming-focused digital platform concept for movies, series, TV and entertainment content.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">API</span><span class="tag">Responsive UI</span></div>
+        <a class="project-link" href="#">View project →</a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><div class="project-icon">🎓</div><span class="project-number">03</span></div>
+        <h3>IYF Tech Academy</h3>
+        <p>A technology education initiative focused on helping beginners learn web development through practical projects.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Education</span></div>
+        <a class="project-link" href="#">View project →</a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><div class="project-icon">🥋</div><span class="project-number">04</span></div>
+        <h3>Top Taekwondo</h3>
+        <p>Digital work supporting a Taekwondo academy through web presence, information and promotional content.</p>
+        <div class="tags"><span class="tag">Web</span><span class="tag">Design</span><span class="tag">Content</span></div>
+        <a class="project-link" href="#">View project →</a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><div class="project-icon">💡</div><span class="project-number">05</span></div>
+        <h3>Digital Experiments</h3>
+        <p>Small experiments used to learn interfaces, APIs, responsive design and modern development workflows.</p>
+        <div class="tags"><span class="tag">APIs</span><span class="tag">UI</span><span class="tag">JavaScript</span></div>
+        <a class="project-link" href="#">Explore →</a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-top"><div class="project-icon">🚀</div><span class="project-number">06</span></div>
+        <h3>More in progress</h3>
+        <p>ZIMCRAFT is continuously evolving as new ideas become prototypes, websites and digital products.</p>
+        <div class="tags"><span class="tag">Build</span><span class="tag">Learn</span><span class="tag">Improve</span></div>
+        <a class="project-link" href="#contact">Start something →</a>
+      </article>
+    </div>
+  </div>
 </section>
-<section class="section services" id="services">
-<div class="container">
-<div class="text-center hidden">
-<h2 class="section-title">Services &amp; Pricing</h2>
-<p class="section-subtitle">Affordable, professional web solutions for your business</p>
-</div>
-<div class="pricing-grid">
-<div class="pricing-card hidden">
-<h3>🍕 Restaurant Starter</h3>
-<div class="price">$100<span> one-time</span></div>
-<p style="color: var(--text-muted); margin-bottom: 20px;">Perfect for cafes, food trucks, and small restaurants</p>
-<ul>
-<li>Mobile-Friendly Design</li>
-<li>Digital Menu Display</li>
-<li>Google Maps Integration</li>
-<li>Contact Form</li>
-<li>Social Media Links</li>
-<li>1 Week Delivery</li>
-</ul>
-<a class="btn-primary" href="#contact" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
-</div>
-<div class="pricing-card featured hidden">
-<span class="featured-badge">MOST POPULAR</span>
-<h3>💼 Business Pro</h3>
-<div class="price">$350<span> one-time</span></div>
-<p style="color: var(--text-muted); margin-bottom: 20px;">For established businesses needing strong online presence</p>
-<ul>
-<li>5 Custom Pages</li>
-<li>SEO Optimization</li>
-<li>Contact &amp; Booking Forms</li>
-<li>Social Media Integration</li>
-<li>Google Analytics Setup</li>
-<li>1 Month Support</li>
-<li>2 Weeks Delivery</li>
-</ul>
-<a class="btn-primary" href="#contact" style="width: 100%; text-align: center; justify-content: center;">Get Started</a>
-</div>
-<div class="pricing-card hidden">
-<h3>🛒 E-Commerce</h3>
-<div class="price">$800<span> starting</span></div>
-<p style="color: var(--text-muted); margin-bottom: 20px;">Full online store to sell your products</p>
-<ul>
-<li>Complete Online Store</li>
-<li>Payment Gateway Setup</li>
-<li>Product Management (20+ items)</li>
-<li>Shopping Cart &amp; Checkout</li>
-<li>Admin Dashboard</li>
-<li>Inventory Management</li>
-<li>1 Month Support</li>
-</ul>
-<a class="btn-primary" href="#contact" style="width: 100%; text-align: center; justify-content: center;">Get Started</a> </div>
-</div>
-</div>
+
+<section class="journey" id="journey">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">04 / JOURNEY</div>
+      <h2 class="section-title">Learning through <span>building.</span></h2>
+      <p class="section-text">The portfolio focuses on practical work, continuous learning and community contribution.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-date">FOUNDATION</div>
+        <h3>Web Development</h3>
+        <p>Built a foundation in HTML, CSS and JavaScript through hands-on learning and practical projects.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-date">FULL-STACK PATH</div>
+        <h3>Expanding the Stack</h3>
+        <p>Explored React, Node.js, databases, APIs and the wider workflow required to build complete digital products.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-date">COMMUNITY</div>
+        <h3>Teaching & Sharing</h3>
+        <p>Supported beginners with web development fundamentals and practical learning activities.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-date">ZIMCRAFT</div>
+        <h3>Build. Learn. Create.</h3>
+        <p>ZIMCRAFT brings the journey together as a personal digital brand and home for current and future projects.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<footer id="contact">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col">
-<h4>Panashe Chamani · Cyberspace</h4>
-<p>Official portfolio of Panashe Chamani, professionally known as Cyberspace — a digital creator focused on learning, building and exploring technology.</p>
-<div class="social-links">
-<a class="social-icon" href="#">📧 </a>
-<a class="social-icon" href="#">📷 </a>
-<a class="social-icon" href="#"> 📱 </a>
-<a class="social-icon" href="#">📘 </a>
-</div>
-</div>
-<div class="footer-col">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="#about">→ About Me</a></li>
-<li><a href="#skills">→ My Skills</a></li>
-<li><a href="#contributions">→ Contributions</a></li>
-<li><a href="#services">→ Services</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Contact Info</h4>
-<ul>
-<li><a href="mailto:iyf@gmail.com">📧 support@hostify.co.zw</a></li>
-<li><a href="tel:+263787770395">📱 +263787770395</a></li>
-<li><a href="#">📍 Harare, Zimbabwe</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Education</h4>
-<ul>
-<li><a href="#">🎓 IYF FREE WEEKEND ACADEMY</a></li>
-<li><a href="#">💻 HackerRank Certified</a></li>
-<li><a href="#">📚 Continuous Learner</a></li>
-</ul>
-</div>
-</div>
-<div class="copyright"> <p>© 2026 Cyberspace . All rights reserved. | Built with ❤️ and lots of ☕</p>
-</div>
-</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">05 / SERVICES</div>
+      <h2 class="section-title">What I can <span>build.</span></h2>
+      <p class="section-text">Digital solutions focused on useful interfaces, responsive experiences and practical functionality.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service reveal">
+        <div class="service-icon">🌐</div>
+        <h3>Websites</h3>
+        <p>Modern responsive websites for personal brands, organizations and businesses.</p>
+        <ul><li>Responsive design</li><li>Modern UI</li><li>SEO foundations</li><li>Mobile-first experience</li></ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-icon">⚙️</div>
+        <h3>Web Applications</h3>
+        <p>Interactive digital products powered by frontend and backend technologies.</p>
+        <ul><li>JavaScript applications</li><li>API integration</li><li>Database integration</li><li>User-focused interfaces</li></ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-icon">💡</div>
+        <h3>Digital Projects</h3>
+        <p>From concept to prototype, turning ideas into practical digital experiences.</p>
+        <ul><li>Project planning</li><li>UI concepts</li><li>Technical exploration</li><li>Continuous improvement</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div>
+        <div class="eyebrow">06 / CONTACT</div>
+        <h2>Have an idea?<br><span>Let's build it.</span></h2>
+        <p>
+          Whether it's a website, digital platform or a new idea you want to explore,
+          ZIMCRAFT is open to meaningful projects and collaborations.
+        </p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:hello@zimcraft.zone.id">✉️ Email Me</a>
+        <a class="btn btn-secondary" href="tel:+263787770395">📱 Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <div class="brand"><span class="brand-mark">Z</span><span class="brand-name">ZIM<span>CRAFT</span></span></div>
+      <p class="footer-copy">© 2026 ZIMCRAFT · Panashe Chamani · Built with curiosity & code.</p>
+    </div>
+    <div class="socials">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </footer>
+
 <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
 
-        document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
+menu.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  menu.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+});
 
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const links = document.querySelectorAll('.nav-links li');
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menu.textContent = "☰";
+  });
+});
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.12});
 
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 </body>
-</html><!-- -->
+</html>
